@@ -1,0 +1,246 @@
+﻿<!--<div ng-show="shoppingCart.missingOrderProductIds.length > 0">
+    <div class="missingItems">
+        {{session.settings.localization.missingItems}}
+        <span ng-repeat="op in shoppingCart.missingOrderProductIds">
+            {{op}}<span ng-if="$index < shoppingCart.missingOrderProductIds.length - 1">, </span>
+        </span>
+    </div>
+    <div class="clearfix"></div>
+</div>-->
+<div class="shoppingCartFatherWrap">
+<div class="missingItems" ng-show="!shoppingCart">
+    &nbsp;
+</div>
+<div class="FormLabel ShoppingCartTitle ShoppingCartMainTitle">
+    Shopping Cart
+</div>
+<div class="FormLabel ShoppingCartTitle">
+    {{session.settings.localization.shoppingCartItems}}
+</div>
+
+<div ng-show="shoppingCart.orderProducts.length == 0">
+    <br><span class="FormField">{{session.settings.localization.noItemsInShoppingCart}}</span><br>
+    <div class="emptyCartButtons">
+        <a style="color: #20a8ce !important;" class="btn btn-default XmpImageButton XmpieThemeColorButton" href="#/home">
+                            {{session.settings.localization.continueShopping}}
+                        </a>
+    </div>
+</div>
+
+<div ng-show="shoppingCart.orderProducts.length > 0">
+    <table cellspacing="0" cellpadding="0" class="ShoppingCartControl" ng-show="shoppingCart.orderProducts.length > 0">
+        <tbody>
+            <tr>
+                <td colspan="4" align="center">
+                    <div id="cartOrderTableWrapper">
+                        <div class="RadGrid RadGrid_Default" tabindex="0">
+                            <table class="rgMasterTable" border="0" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="ShoppingCartGrid_Column_Buttons nopadding rgHeader" valign="middle">&nbsp;</th>
+                                        <th scope="col" class="ShoppingCartGrid_Column_Buttons nopadding rgHeader" valign="middle">&nbsp;</th>
+                                        <th scope="col" class="ShoppingCartGrid_Column_Thumbnail ShoppingCartGrid_Column_Thumbnail_Header nopadding   rgHeader" valign="middle">&nbsp;</th>
+                                        <th scope="col" class="ShoppingCartGrid_Column_ProductName ShoppingCartGrid_Column_ProductName_Header hidden-xs rgHeader" valign="middle">
+                                            {{session.settings.localization.name}}
+                                        </th>
+                                        <th scope="col" class="ShoppingCartGrid_Column_Units nopadding rgHeader" valign="middle">
+                                            {{session.settings.localization.units}}
+                                        </th>
+                                        <th scope="col" class="ShoppingCartGrid_Column_Price hidden-xs hidden-sm rgHeader" valign="middle">
+                                            {{session.settings.localization.price}}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="rgRow" valign="middle" rownum="0" ng-repeat="op in shoppingCart.orderProducts">
+                                        <td class="close-cart-icon ShoppingCartGrid_Column_Buttons nopadding">
+                                            <a ng-click="delete(op.orderProductID)" title="Remove this item" class=" fa fa-close"></a>
+                                        </td>
+                                        <td class="proofGeneration">
+                                            <a ng-if="op.enableProofGeneration"
+                                               ng-click="showProof(op)"
+                                               data-toggle="modal" data-target="#ProofDlgModal"></a>
+                                        </td>
+                                        <td class="ShoppingCartGrid_Column_Thumbnail nopadding">
+                                            <div class="thumbnailWrapper ">
+                                                <div id="thumbnailBorder">
+                                                    <a ng-click="showProof(op)"
+                                                       ng-if="op.enableProofGeneration"
+                                                       data-toggle="modal" data-target="#ProofDlgModal">
+                                                        <img class="img-responsive center-block"
+                                                             ng-src="Handlers/ImageHandler.ashx?pid={{op.productId}}" />
+                                                    </a>
+                                                    <img class="img-responsive center-block"
+                                                         ng-if="!op.enableProofGeneration"
+                                                         ng-src="Handlers/ImageHandler.ashx?pid={{op.productId}}" />
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive-info">
+                                                <div class="productName">
+                                                <span>{{op.productName}}</span>
+
+                                                <table class="TableNoBorders nopadding" width="100%">
+                                                <tbody>
+                                                    <tr valign="middle">
+                                                        <td align="left" class="tdUnits"
+                                                            ng-if="op.isRecipientList">
+                                                            <div class="divRecipients">
+                                                                <span>{{session.settings.localization.recipients}}</span>
+                                                                <span>{{op.recipientNumber}}</span>
+                                                                <br>
+                                                            </div>
+                                                            <div>
+                                                                <span>{{session.settings.localization.quantityPerRecipient}}</span>
+                                                                <span>{{op.quantityPerRecipient}}</span>
+                                                                <span ng-if="!op.isPack">{{session.settings.localization.items}}</span>
+                                                                <span ng-if="op.isPack">{{ getProductUnitName(op.packInfo) }}</span>
+                                                                <span ng-if="op.isPack">(1 {{op.packInfo.Name}} = {{op.unitAmount}} {{op.itemInfo ? op.itemInfo.PluralName : session.settings.localization.items}})</span>
+                                                                <br>
+                                                            </div>
+                                                            <span>{{session.settings.localization.total}}</span>
+                                                            <span>{{op.totalQuantity}}</span>
+                                                            <span ng-if="!op.isPack">{{session.settings.localization.items}}</span>
+                                                            <span ng-if="op.isPack">{{ getProductUnitName(op.packInfo, op.totalQuantity > 1) }}</span>
+                                                        </td>
+                                                        <td align="left" class="tdUnits"
+                                                            ng-if="!op.isRecipientList">
+                                                            <div>
+                                                                <span>{{op.quantityPerRecipient}}</span>
+                                                                <span ng-if="!op.isPack">{{op.itemInfo ? getProductUnitName(op.itemInfo) : session.settings.localization.items}}</span>
+                                                                <span ng-if="op.isPack">{{ getProductUnitName(op.packInfo) }}</span>
+                                                                <span ng-if="op.isPack">(1 {{op.packInfo.Name}} = {{op.unitAmount}} {{op.itemInfo ? op.itemInfo.PluralName : session.settings.localization.items}})</span>
+                                                                <br>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                             <div class="editProduct">
+                                                <a class="SiteLink" ng-click="edit(op.orderProductID, op.productId)">
+                                                    {{session.settings.localization.edit}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                            <span class="BoldPriceLabel">{{op.totalPriceFormatted}}</span>
+                                          
+                                           
+                                            </div>
+                                        </td>
+                                        <td class="ShoppingCartGrid_Column_ProductName hidden-xs">
+                                            <div class="productName">
+                                                <span>{{op.productName}}</span>
+                                            </div>
+                                            <div class="editProduct">
+                                                <a class="SiteLink" ng-click="edit(op.orderProductID, op.productId)">
+                                                    {{session.settings.localization.edit}}
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="ShoppingCartGrid_Column_Units nopadding">
+                                            <table class="TableNoBorders nopadding" width="100%">
+                                                <tbody>
+                                                    <tr valign="middle">
+                                                        <td align="left" class="tdUnits"
+                                                            ng-if="op.isRecipientList">
+                                                            <div class="divRecipients">
+                                                                <span>{{session.settings.localization.recipients}}</span>
+                                                                <span>{{op.recipientNumber}}</span>
+                                                                <br>
+                                                            </div>
+                                                            <div>
+                                                                <span>{{session.settings.localization.quantityPerRecipient}}</span>
+                                                                <span>{{op.quantityPerRecipient}}</span>
+                                                                <span ng-if="!op.isPack">{{session.settings.localization.items}}</span>
+                                                                <span ng-if="op.isPack">{{ getProductUnitName(op.packInfo) }}</span>
+                                                                <span ng-if="op.isPack">(1 {{op.packInfo.Name}} = {{op.unitAmount}} {{op.itemInfo ? op.itemInfo.PluralName : session.settings.localization.items}})</span>
+                                                                <br>
+                                                            </div>
+                                                            <span>{{session.settings.localization.total}}</span>
+                                                            <span>{{op.totalQuantity}}</span>
+                                                            <span ng-if="!op.isPack">{{session.settings.localization.items}}</span>
+                                                            <span ng-if="op.isPack">{{ getProductUnitName(op.packInfo, op.totalQuantity > 1) }}</span>
+                                                        </td>
+                                                        <td align="left" class="tdUnits"
+                                                            ng-if="!op.isRecipientList">
+                                                            <div>
+                                                                <span>{{op.quantityPerRecipient}}</span>
+                                                                <span ng-if="!op.isPack">{{op.itemInfo ? getProductUnitName(op.itemInfo) : session.settings.localization.items}}</span>
+                                                                <span ng-if="op.isPack">{{ getProductUnitName(op.packInfo) }}</span>
+                                                                <span ng-if="op.isPack">(1 {{op.packInfo.Name}} = {{op.unitAmount}} {{op.itemInfo ? op.itemInfo.PluralName : session.settings.localization.items}})</span>
+                                                                <br>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td class="ShoppingCartGrid_Column_Price hidden-xs hidden-sm">
+                                            <span class="priceHolder">
+                                                <span class="BoldPriceLabel">{{op.totalPriceFormatted}}</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <ul class="CheckOutPage panel panel-default">
+        <li id="trAboveTop" class="aboveTop detailBackground"></li>
+        <li id="trTop" class="top detailBackground">
+            <dl class="detail floatClearing">
+                <dt class="ShoppingCartSubtotalCaption">
+                    <span>Subtotal</span>
+                </dt>
+                <dd class="ShoppingCartPriceTD">
+                    <span>
+                        {{shoppingCart.subTotalPriceFormatted}}
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li id="trBottom" class="bottom">
+            <div class="buttons">
+                <div class="buttonsContainer">
+                    <div class="buttonContainer">
+                        <a style="color: #20a8ce !important;" class="btn btn-default XmpImageButton XmpieThemeColorButton" href="#/home">
+                            {{session.settings.localization.continueShopping}}
+                        </a>
+                    </div>
+                    <div class="buttonContainer"></div>
+                    <div class="buttonContainer">
+                        <a class="btn btn-default XmpImageButton XmpieThemeColorButton button-highlighted" ng-click="submit()">
+                            {{session.settings.localization.checkOut}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <form id="postForm"
+          enctype="application/x-www-form-urlencoded"
+          action={{punchOutUrl}}
+          method='post'>
+        <input type='hidden' name='version' value='1.0' />
+        <input type='hidden' name='params' value={{Params}} />
+    </form>
+    <div class="modal fade" id="ProofDlgModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="DlgModalClose" type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <iframe ng-src="{{proofLink}}"></iframe>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

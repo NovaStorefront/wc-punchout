@@ -1,0 +1,3211 @@
+/* Global styles */
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font: 16px/1.5 Roboto, 'Open Sans', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+hr {
+    border-color: #3c3038;
+    border-width: 3px;
+    max-width: 50px;
+}
+
+    hr.light {
+        border-color: white;
+    }
+
+a {
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+    color: #3c3038;
+    text-decoration: none;
+}
+
+    a:hover, a:focus {
+        text-decoration: underline;
+        color: #3c3038;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', Arial, sans-serif;
+}
+
+::-moz-selection {
+    color: white;
+    text-shadow: none;
+    background: #222222;
+}
+
+::selection {
+    color: white;
+    text-shadow: none;
+    background: #222222;
+}
+
+img::selection {
+    color: white;
+    background: transparent;
+}
+
+img::-moz-selection {
+    color: white;
+    background: transparent;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    height: 34px;
+    min-width: 50px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    margin: 0 10px 0 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    position: relative;
+    top: -1px;
+}
+
+input[type=submit] {
+    border: 0;
+    background: #82ba48;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+input[type="button"] {
+    background: #82ba48;
+    color: #fff;
+    border: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 6px 12px;
+    text-transform: uppercase;
+}
+
+select {
+    border-radius: 1px !important;
+}
+
+label {
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+table thead {
+    background-color: #3c3038;
+}
+
+caption {
+    padding: 0;
+}
+
+/* buttons styles */
+.btn {
+    font-size: 18px;
+    line-height: normal;
+    border: none;
+    border-radius: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-xl {
+    padding: 15px 45px;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+    padding: 6px 12px;
+}
+
+.btn-default {
+    background: #82ba48;
+    color: #fff !important;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+    .btn-default:hover,
+    .btn-default:focus,
+    .btn-default.focus,
+    .btn-default:active,
+    .btn-default.active,
+    .open > .dropdown-toggle.btn-default {
+        background: #52970b;
+        border-color: #ededed;
+    }
+
+    .btn-default:active,
+    .btn-default.active,
+    .open > .dropdown-toggle.btn-default {
+        background-image: none;
+    }
+
+    .btn-default.disabled,
+    .btn-default[disabled],
+    fieldset[disabled] .btn-default,
+    .btn-default.disabled:hover,
+    .btn-default[disabled]:hover,
+    fieldset[disabled] .btn-default:hover,
+    .btn-default.disabled:focus,
+    .btn-default[disabled]:focus,
+    fieldset[disabled] .btn-default:focus,
+    .btn-default.disabled.focus,
+    .btn-default[disabled].focus,
+    fieldset[disabled] .btn-default.focus,
+    .btn-default.disabled:active,
+    .btn-default[disabled]:active,
+    fieldset[disabled] .btn-default:active,
+    .btn-default.disabled.active,
+    .btn-default[disabled].active,
+    fieldset[disabled] .btn-default.active {
+        background-color: white;
+        border-color: white;
+    }
+
+    .btn-default .badge {
+        color: white;
+        background-color: #222222;
+    }
+
+.btn-white {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+    .btn-white:hover,
+    .btn-white:focus,
+    .btn-white.focus,
+    .btn-white:active,
+    .btn-white.active,
+    .open > .dropdown-toggle.btn-white {
+        color: white;
+        background-color: rgba(0, 0, 0, 0);
+        border-color: #ededed;
+    }
+
+    .btn-white:active,
+    .btn-white.active,
+    .open > .dropdown-toggle.btn-white {
+        background-image: none;
+    }
+
+    .btn-white.disabled,
+    .btn-white[disabled],
+    fieldset[disabled] .btn-white,
+    .btn-white.disabled:hover,
+    .btn-white[disabled]:hover,
+    fieldset[disabled] .btn-white:hover,
+    .btn-white.disabled:focus,
+    .btn-white[disabled]:focus,
+    fieldset[disabled] .btn-white:focus,
+    .btn-white.disabled.focus,
+    .btn-white[disabled].focus,
+    fieldset[disabled] .btn-white.focus,
+    .btn-white.disabled:active,
+    .btn-white[disabled]:active,
+    fieldset[disabled] .btn-white:active,
+    .btn-white.disabled.active,
+    .btn-white[disabled].active,
+    fieldset[disabled] .btn-white.active {
+        background-color: transparent;
+        border-color: white;
+    }
+
+    .btn-white .badge {
+        color: transparent;
+        background-color: white;
+    }
+
+.btn-primary {
+    color: white;
+    background-color: #82ba48 !important;
+    border-color: #82ba48 !important;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary.focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open > .dropdown-toggle.btn-primary {
+        color: #fff;
+        background-color: #52970b !important;
+    }
+
+        .btn-primary:hover span,
+        .btn-primary a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .btn-primary:active,
+    .btn-primary.active,
+    .open > .dropdown-toggle.btn-primary {
+        background-image: none;
+    }
+
+    .btn-primary.disabled,
+    .btn-primary[disabled],
+    fieldset[disabled] .btn-primary,
+    .btn-primary.disabled:hover,
+    .btn-primary[disabled]:hover,
+    fieldset[disabled] .btn-primary:hover,
+    .btn-primary.disabled:focus,
+    .btn-primary[disabled]:focus,
+    fieldset[disabled] .btn-primary:focus,
+    .btn-primary.disabled.focus,
+    .btn-primary[disabled].focus,
+    fieldset[disabled] .btn-primary.focus,
+    .btn-primary.disabled:active,
+    .btn-primary[disabled]:active,
+    fieldset[disabled] .btn-primary:active,
+    .btn-primary.disabled.active,
+    .btn-primary[disabled].active,
+    fieldset[disabled] .btn-primary.active {
+        background-color: #3c3038;
+        border-color: #3c3038;
+        border: none !important;
+    }
+
+    .btn-primary .badge {
+        color: #3c3038;
+        background-color: white;
+    }
+
+/* some styles */
+.text-faded {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.caret {
+    color: #333;
+}
+
+#uStoreSkinsMainApp,
+.mainareaFullWidth {
+    float: left;
+    width: 100%;
+    margin-top: 55px;
+}
+
+aside {
+    padding: 20px 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.CheckoutServices.form-control {
+    width: 250px;
+}
+
+/* login page styles */
+#tblRegistration {
+    width: 450px;
+    border: 0;
+}
+
+    #tblRegistration .formfield {
+        width: 247px;
+    }
+
+    #tblRegistration .RegisterLink {
+        text-align: center;
+        padding: 0 10px 10px;
+    }
+
+    #tblRegistration .SmallLink {
+        font-family: Roboto, 'Open Sans', Arial, sans-serif;
+        font-size: 18px;
+        line-height: normal;
+        border: none;
+        border-radius: 0 !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: #3c3038;
+        color: #fff;
+        display: block;
+        padding: 6px 12px;
+    }
+
+    #tblRegistration .RegisterLink a:hover {
+        text-decoration: none;
+    }
+
+.formbox td {
+    padding: 10px !important;
+}
+
+/* header styles */
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+}
+
+/* main navigation styles */
+.navbar-default {
+    background-color: #fcfbf2;
+    /*font-family: Roboto, 'Oswald', Arial, sans-serif;*/
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+    border-bottom: 1px solid #c5cace;
+    margin: 0;
+}
+
+    .navbar-default .navbar-header .navbar-brand {
+        padding: 14px 0 9px;
+        margin: 0;
+        min-height: 68px;
+    }
+
+    .navbar-default .nav > li {
+        position: inherit;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-default li .fa-caret-up {
+        display: none;
+    }
+
+    .navbar-default li.open .fa-caret-up {
+        display: inline-block;
+        top: -2px;
+        position: relative;
+    }
+
+    .navbar-default li.open .fa-caret-down {
+        display: none;
+    }
+
+    .navbar-default .nav > li > a,
+    .navbar-default .nav > li > a:focus {
+        text-transform: uppercase;
+        color: #3c3038;
+    }
+
+        .navbar-default .nav > li > a:hover,
+        .navbar-default .nav > li > a:focus:hover {
+            color: #64505d;
+        }
+
+        .navbar-default .nav > li > a.product > i,
+        .navbar-default .nav > li > a:focus.product > i {
+            margin-left: 8px;
+        }
+
+        .navbar-default .nav > li > a.nav-icon {
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+    .navbar-default .nav > li.active > a,
+    .navbar-default .nav > li.active > a:focus {
+        color: #3c3038 !important;
+        background-color: transparent;
+    }
+
+        .navbar-default .nav > li.active > a:hover,
+        .navbar-default .nav > li.active > a:focus:hover {
+            background-color: transparent;
+        }
+
+    .navbar-default .nav > li.open > a {
+        background-color: #3c3038;
+        color: white;
+    }
+
+        .navbar-default .nav > li.open > a:hover,
+        .navbar-default .nav > li.open > a:focus {
+            background-color: #3c3038;
+            color: #ffffff;
+        }
+
+        .navbar-default .nav > li.open > a i {
+            color: #ffffff;
+        }
+
+    .navbar-default .nav > li .form-group {
+        position: relative;
+        padding: 17px 10px;
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+        .navbar-default .nav > li .form-group .btn {
+            background: #fff;
+        }
+
+        .navbar-default .nav > li .form-group.search i {
+            position: absolute;
+            top: 23px;
+            right: 21px;
+            font-size: 1.3em;
+            color: #3c3038;
+        }
+
+        .navbar-default .nav > li .form-group.search input {
+            max-width: 190px;
+            padding-right: 30px;
+        }
+
+        .navbar-default .nav > li .form-group.currency select {
+            max-width: 80px;
+            padding: 6px;
+        }
+
+        .navbar-default .nav > li .form-group.lang {
+            height: 68px;
+        }
+
+            .navbar-default .nav > li .form-group.lang .bfh-languages {
+                max-width: 50px;
+            }
+
+                .navbar-default .nav > li .form-group.lang .bfh-languages .bfh-selectbox-toggle {
+                    max-width: 50px;
+                    padding: 6px;
+                }
+
+                    .navbar-default .nav > li .form-group.lang .bfh-languages .bfh-selectbox-toggle .selectbox-caret {
+                        margin-right: 0;
+                        color: #3c3038;
+                    }
+
+                .navbar-default .nav > li .form-group.lang .bfh-languages .bfh-selectbox-options {
+                    max-width: 50px;
+                    min-width: 50px;
+                }
+
+                    .navbar-default .nav > li .form-group.lang .bfh-languages .bfh-selectbox-options li:first-child {
+                        display: none;
+                    }
+
+                    .navbar-default .nav > li .form-group.lang .bfh-languages .bfh-selectbox-options li a {
+                        width: 36px;
+                        padding: 3px 15px;
+                    }
+
+            .navbar-default .nav > li .form-group.lang .open > a {
+                background-color: #fff;
+            }
+
+    .navbar-default .nav .dropdown-menu {
+        left: 0;
+        right: 0;
+        top: 100%;
+        border-radius: 0px;
+        border: none;
+    }
+
+        .navbar-default .nav .dropdown-menu .container,
+        .container.uedit-application {
+            padding: 0;
+        }
+
+        .navbar-default .nav .dropdown-menu ul.user {
+            list-style: none;
+        }
+
+            .navbar-default .nav .dropdown-menu ul.user li a {
+                display: block;
+                float: right;
+                padding: 15px 20px;
+                font: 16px Arial, Tahoma, sans-serif;
+                font-weight: 200;
+                color: #3c3038;
+            }
+
+                .navbar-default .nav .dropdown-menu ul.user li a:hover {
+                    text-decoration: none;
+                }
+
+                .navbar-default .nav .dropdown-menu ul.user li a i {
+                    margin-right: 10px;
+                    font-size: 20px;
+                }
+
+            .navbar-default .nav .dropdown-menu ul.user li:first-child a {
+                padding-right: 0px;
+            }
+
+        .navbar-default .nav .dropdown-menu ul.product-gallery {
+            list-style: none;
+            padding: 20px 0 25px;
+            -moz-column-count: 6;
+            -webkit-column-count: 6;
+            column-count: 6;
+        }
+
+            .navbar-default .nav .dropdown-menu ul.product-gallery li a {
+                display: inline-block;
+                padding: 5px 20px;
+                font: 14px Arial, Tahoma, sans-serif;
+                font-weight: 200;
+                color: #3c3038;
+            }
+
+    .navbar-default .navbar-toggle {
+        margin: 15px;
+    }
+
+        .navbar-default .navbar-toggle > .icon-bar {
+            background-color: #ffffff;
+        }
+
+    .navbar-default .navbar-toggle {
+        background: #3c3038;
+        border-color: #3c3038;
+        position: absolute;
+        top: 5px;
+        right: 0;
+    }
+
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+            background-color: #64505d;
+            color: #fff !important;
+        }
+
+            .navbar-default .navbar-toggle:hover > span {
+                background-color: #3c3038;
+            }
+
+    .navbar-default .dropdown-toggle.product {
+        font: 16px/20px 'Oswald', Arial, sans-serif;
+        padding: 24px 20px;
+    }
+
+    .navbar-default .form-control {
+        border-color: #634d4e;
+        color: #333;
+    }
+
+.navbar-right {
+    margin: 0;
+}
+
+/*  carousel styles*/
+.carousel {
+    margin: -18px 0 36px;
+}
+
+.carousel-caption {
+    text-shadow: none;
+    background: rgba(0, 0, 0, 0.35);
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 20%;
+    right: 20%;
+    z-index: 9;
+    padding: 30px 75px;
+    font-size: 18px;
+}
+
+    .carousel-caption h2 {
+        font-weight: 500;
+        margin: 0 0 15px;
+        font-size: 60px;
+    }
+
+.carousel-indicators {
+    margin: 0 0 0 -30%;
+    padding: 0;
+}
+
+    .carousel-indicators li,
+    .carousel-indicators li.active,
+    .carousel-indicators li:hover {
+        margin: 1px 3px;
+        width: 11px;
+        height: 11px;
+    }
+
+        .carousel-indicators li.active,
+        .carousel-indicators li:hover {
+            border-color: #3c3038;
+            background: #3c3038;
+        }
+
+.carousel-caption .btn {
+    position: absolute;
+    z-index: 11;
+    left: 50%;
+    bottom: 5%;
+    width: 210px;
+    margin-left: -105px;
+    padding: 18px;
+    background: none !important;
+    border: 2px solid #82ba48;
+}
+
+    .carousel-caption .btn:hover {
+        background: #82ba48 !important;
+    }
+
+.category-main-inner {
+    position: absolute;
+    bottom: 0;
+}
+
+/* breadcrumbs styles */
+.breadcrumb {
+    padding: 12px 0;
+    margin-bottom: 36px;
+    background: none;
+    border-radius: 0;
+    border-bottom: 1px solid #686a6d;
+}
+
+    .breadcrumb li > a {
+        font-size: 14px;
+        color: #82ba48;
+        text-transform: uppercase;
+    }
+
+        .breadcrumb li > a:hover {
+            text-decoration: none;
+            color: #3c3038;
+        }
+
+    .breadcrumb > li:last-child a {
+        color: #666666;
+    }
+
+    .breadcrumb > li + li:before {
+        padding: 0 8px;
+        color: #666;
+        content: "\02C3";
+    }
+
+section .pagination {
+    display: block;
+    margin: 30px auto -60px;
+}
+
+    section .pagination .btn {
+        padding: 10px 70px;
+        font-size: 14px;
+    }
+
+section .section-heading {
+    font-size: 24px;
+    text-align: left;
+    margin: 0 0 30px -15px;
+}
+
+section.category {
+    padding: 0;
+}
+
+    section.category .category-main-bg {
+        position: relative;
+    }
+
+/* product boxes styles */
+.category-main-inner .product-box {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    padding: 8px 0;
+    position: relative;
+    font-family: 'Open Sans', Arial, sans-serif;
+    cursor: pointer;
+    display: block;
+    min-height: 172px;
+    border-right: 1px solid #fff;
+}
+
+    .category-main-inner .product-box a {
+        color: #fff;
+    }
+
+    .category-main-inner .product-box > div {
+        padding: 0 8px;
+    }
+
+    .category-main-inner .product-box div:nth-child(1) {
+        padding-right: 0;
+    }
+
+    .category-main-inner .product-box img {
+        width: 110px;
+    }
+
+    .category-main-inner .product-box h3 {
+        margin: 0;
+        font: bold 14px 'Open Sans', Arial, sans-serif;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+        .category-main-inner .product-box h3 a {
+            color: #fff;
+        }
+
+    .category-main-inner .product-box p {
+        margin: 0;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .category-main-inner .product-box span {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+        .category-main-inner .product-box span.price {
+            font-size: 20px;
+        }
+
+    .category-main-inner .product-box hr {
+        max-width: 65px;
+        border-color: #fff;
+        border-width: 1px;
+        margin: 8px auto;
+    }
+
+    .category-main-inner .product-box .btn {
+        font-size: 12px;
+        max-width: 65px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+/*section.catalog-page,
+section.product-page {
+  padding: 50px 0 36px;
+}*/
+section.catalog-items .container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+    section.catalog-items .container .row {
+        display: flex;
+    }
+
+section.catalog-items .item-box {
+    margin-bottom: 36px;
+    position: relative;
+}
+
+section.catalog-items .holder {
+    padding-bottom: 32px;
+}
+
+section.catalog-items .clearfix {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+section.catalog-items .item-box img {
+    width: 100%;
+}
+
+section.catalog-items .item-box h3 {
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+    section.catalog-items .item-box h3 a {
+        color: #3c3038;
+    }
+
+section.catalog-items .item-box p {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+section.catalog-items .item-box > div {
+    width: 100%;
+}
+
+section.catalog-items .item-box .thumb {
+    height: 100px;
+    max-height: 150px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+section.catalog-items .item-box > div > div {
+    font-weight: bold;
+}
+
+    section.catalog-items .item-box > div > div:nth-child(1) {
+        font-size: 14px;
+        color: #686a6d;
+        line-height: 1;
+    }
+
+        section.catalog-items .item-box > div > div:nth-child(1) span {
+            font-size: 18px;
+        }
+
+    section.catalog-items .item-box > div > div .btn {
+        float: right;
+        padding: 6px 25px;
+        font-size: 14px;
+        -webkit-transition: all 0.35s;
+        -moz-transition: all 0.35s;
+        transition: all 0.35s;
+    }
+
+        section.catalog-items .item-box > div > div .btn:hover {
+            background-color: #52970b;
+            color: #ffffff;
+        }
+
+section.product-page .description {
+    padding-left: 30px;
+    padding-right: 20px;
+    color: #333;
+}
+
+h2,
+.ShoppingCartTitle,
+.boxHeading,
+.addressPaneTitle span,
+.TablesTitle span {
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-family: 'Oswald', Arial, sans-serif;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+section.product-page .description p {
+    font-size: 16px;
+}
+
+section.product-page .description ul {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+section.product-page .description .form-inline {
+    margin: 30px 0 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #686a6d;
+}
+
+    section.product-page .description .form-inline .form-group:last-child {
+        float: right;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+        section.product-page .description .form-inline .form-group:last-child span {
+            font-size: 25px;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+    section.product-page .description .form-inline label {
+        min-width: 90px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    section.product-page .description .form-inline select {
+        min-width: 90px;
+        border: 1px solid #3c3038;
+        border-radius: 0;
+    }
+
+section.product-page .description .btn {
+    padding: 15px 30px;
+}
+
+    section.product-page .description .btn i {
+        padding-left: 20px;
+    }
+
+#tblSignIn.well {
+    width: 450px;
+    margin: 100px auto 50px;
+    border: 0;
+    border-radius: 8px;
+}
+
+    #tblSignIn.well .form-group .control-label {
+        float: left;
+        width: 150px;
+        margin: 10px 10px 0 0;
+    }
+
+    #tblSignIn.well .form-group input[type="text"],
+    #tblSignIn.well .form-group input[type="password"],
+    #tblSignIn.well input[type="email"] {
+        float: right;
+    }
+
+    #tblSignIn.well .form-group {
+        margin: 0 0 15px;
+        line-height: normal;
+    }
+
+        #tblSignIn.well .form-group > div {
+            display: inline-block;
+            /*width: 190px;*/
+        }
+
+        #tblSignIn.well .form-group:after {
+            content: '';
+            width: 100%;
+            height: 0;
+            clear: both;
+        }
+
+    #tblSignIn.well .checkbox input[type=checkbox] {
+        margin: 5px 0 0;
+    }
+
+    #tblSignIn.well td > div > span {
+        display: block;
+        width: 100%;
+    }
+
+    #tblSignIn.well #ctl00_cphMainContent_btnPassReminder {
+        color: #333;
+    }
+
+        #tblSignIn.well #ctl00_cphMainContent_btnPassReminder:hover {
+            color: #3c3038;
+        }
+
+#tblSignIn .ErrorText {
+    padding-left: 12px !important;
+    display: block;
+}
+
+.AddressBody {
+    float: left;
+    margin: 15px 0;
+}
+
+#tblSignIn .btn,
+#tblRegistration .btn,
+#tblRegistration .SmallLink {
+    background-color: #3c3038;
+    color: #fff;
+    margin: 15px 0 0;
+    display: block;
+    width: 410px;
+}
+
+    #tblSignIn .btn:hover,
+    #tblRegistration .btn:hover,
+    #tblRegistration .SmallLink:hover {
+        background: #64505d;
+    }
+
+#finalStepLayout #divQuantityCalculationPopup,
+#defaultContent #divQuantityCalculationPopup {
+    display: none;
+}
+
+#finalStepLayout .AccountLinks,
+#defaultContent .AccountLinks {
+    font-size: 18px;
+    color: #3c3038;
+    text-decoration: underline;
+}
+
+    #finalStepLayout .AccountLinks:hover,
+    #defaultContent .AccountLinks:hover {
+        text-decoration: none;
+    }
+
+#finalStepLayout .formSelectionField,
+#defaultContent .formSelectionField {
+    font-size: 16px;
+    color: #3c3038;
+    float: right;
+}
+
+#finalStepLayout .cellbottom,
+#defaultContent .cellbottom {
+    margin-bottom: 20px;
+}
+
+#finalStepLayout .checkoutFinalBack,
+#defaultContent .checkoutFinalBack,
+#finalStepLayout .checkoutFinalNext,
+#defaultContent .checkoutFinalNext {
+    float: left;
+    margin-right: 15px;
+}
+
+#finalStepLayout .ddlAddresses,
+#defaultContent .ddlAddresses {
+    width: 230px !important;
+    float: left;
+}
+
+#finalStepLayout .selectAddressWrapper .formSelectionField,
+#defaultContent .selectAddressWrapper .formSelectionField {
+    font-family: Roboto, 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0 !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #3c3038;
+    color: #ffffff;
+    padding: 7px 12px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    #finalStepLayout .selectAddressWrapper .formSelectionField:hover,
+    #defaultContent .selectAddressWrapper .formSelectionField:hover {
+        text-decoration: none;
+        background-color: rgba(60, 48, 56, .9);
+    }
+
+#finalStepLayout .AddressBody,
+#defaultContent .AddressBody {
+    margin: 15px 0;
+    min-width: 323px;
+    border: 1px solid #e7edf2;
+}
+
+    #finalStepLayout .AddressBody tr:first-child,
+    #defaultContent .AddressBody tr:first-child {
+        background-color: #3c3038;
+        color: #ffffff;
+    }
+
+    #finalStepLayout .AddressBody td,
+    #defaultContent .AddressBody td {
+        padding: 4px 5px;
+        border-bottom: 1px solid #ccc;
+    }
+
+.mainareaFullWidth .form-group {
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+    .mainareaFullWidth .form-group label {
+        float: left;
+        margin: 5px 10px 0 0;
+    }
+
+.mainareaFullWidth .Heading2 {
+    font: 18px/24px 'Oswald', Arial, sans-serif;
+    text-align: center;
+    display: block;
+}
+
+#ctl00_cphMainContent_lblSignInTitle {
+    text-align: center;
+    display: block;
+}
+
+#ctl00_cphMainContent_lblSelectShippingAddress {
+    float: left;
+    margin-bottom: 15px;
+}
+
+#ctl00_cphFooterButtons_btnCancel,
+.XmpieCancelButton,
+#rcMView_Cancel {
+    background-color: #c9302c !important;
+    border-color: #ac2925 !important;
+    border: 0 !important;
+}
+
+    #ctl00_cphFooterButtons_btnCancel:hover,
+    .XmpieCancelButton:hover,
+    #rcMView_Cancel:hover {
+        background-color: rgba(204, 70, 44, .9) !important;
+        color: rgba(255, 255, 255, 1);
+    }
+
+#ctl00_cphMainContent_DtpFrom_calendar caption {
+    text-align: center;
+}
+
+.Link {
+    text-decoration: underline;
+}
+
+    .Link:hover {
+        text-decoration: none;
+    }
+
+#tblAdvSearch #ctl00_cphMainContent_infProduct {
+    position: relative;
+}
+
+    #tblAdvSearch #ctl00_cphMainContent_infProduct:hover .InfoPopup {
+        display: block;
+    }
+
+.addressBoxWrapper {
+    margin-bottom: 15px;
+}
+
+#finalStepLayout .form-group input,
+#defaultContent .form-group input,
+#finalStepLayout .form-group select,
+#defaultContent .form-group select {
+    min-width: 250px;
+    float: left;
+}
+
+#finalStepLayout .orderListTable a,
+#defaultContent .orderListTable a {
+    color: #3c3038;
+    float: left;
+    margin-right: 10px;
+}
+
+.orderListTable a#ctl00_cphMainContent_BtnClearSearchResults {
+    float: right;
+}
+
+#finalStepLayout .PersonalInformation span,
+#defaultContent .PersonalInformation span {
+    display: inline-block;
+    min-width: 90px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#finalStepLayout .addressListTable .addressItemTable,
+#defaultContent .addressListTable .addressItemTable {
+    width: 50%;
+    text-align: left;
+}
+
+    #finalStepLayout .addressListTable .addressItemTable .addressItemHead,
+    #defaultContent .addressListTable .addressItemTable .addressItemHead {
+        border-bottom: 2px dashed #222222;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    #finalStepLayout .addressListTable .addressItemTable ul,
+    #defaultContent .addressListTable .addressItemTable ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+#finalStepLayout .addressPaneAddAddress,
+#defaultContent .addressPaneAddAddress {
+    margin-bottom: 20px;
+}
+
+.PersonalInformation td,
+.tblAddressEdit td {
+    padding-bottom: 15px;
+}
+
+#tblMain {
+    position: relative;
+}
+
+    #tblMain .SinglePrice,
+    #tblMain .SinglePriceCurrency {
+        font-size: 36px;
+    }
+
+    #tblMain #tblNumCopies {
+        width: 180px;
+        margin-bottom: 15px;
+    }
+
+        #tblMain #tblNumCopies #lblNumCopiesWrapper {
+            padding-right: 10px;
+        }
+
+    #tblMain #ctl00_cphMainContent_trDeliveryMethodCaption .FormLabel,
+    #tblMain #ctl00_cphMainContent_trDeliveryMethodCaption .FormField {
+        display: none;
+    }
+
+    #tblMain .tblPriceTagsWrapper {
+        margin-bottom: 15px;
+    }
+
+        #tblMain .tblPriceTagsWrapper td {
+            padding: 10px;
+        }
+
+#OrderFinalStep_PriceReview_TotalQuantity td {
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+#tblMain .tblPriceTagsWrapper td.FormField {
+    font-weight: bold;
+}
+
+#tblMain .SiteLink {
+    color: #3c3038;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#divPricingGridWrapper {
+    padding: 30px 30px 10px;
+    -webkit-box-shadow: 0 0 100px 0 rgba(0,0,0,.5);
+    box-shadow: 0 0 100px 0 rgba(0,0,0,.5);
+}
+
+#tblMain #ctl00_cphMainContent_trPricingTableLink {
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+
+#tblMain #ctl00_cphMainContent_trPricingTable {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: #fff;
+}
+
+#tdProductPricing {
+    width: 100% !important;
+}
+
+#tblMain #ctl00_cphMainContent_trPricingTable > td > table > tbody > tr:first-child > td {
+    text-align: right;
+}
+/*#tblMain #tblNumCopies select {
+  display: inline-block;
+  width: auto;
+  min-width: 90px;
+  vertical-align: middle;
+  border: 1px solid #3c3038;
+  border-radius: 0;
+  padding: 6px 12px;
+}*/
+.WizardButtonsContainer > div {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+}
+
+    .WizardButtonsContainer > div.finish a {
+        color: white;
+        background-color: #3c3038;
+        border-color: #3c3038;
+        -webkit-transition: all 0.35s;
+        -moz-transition: all 0.35s;
+        transition: all 0.35s;
+    }
+
+        .WizardButtonsContainer > div.finish a:hover,
+        .WizardButtonsContainer > div.finish a:focus,
+        .WizardButtonsContainer > div.finish a.focus,
+        .WizardButtonsContainer > div.finish a:active,
+        .WizardButtonsContainer > div.finish a.active,
+        .open > .dropdown-toggle.WizardButtonsContainer > div.finish a {
+            color: white;
+            opacity: .9;
+            border-color: #29a996;
+        }
+
+        .WizardButtonsContainer > div.finish a:active,
+        .WizardButtonsContainer > div.finish a.active,
+        .open > .dropdown-toggle.WizardButtonsContainer > div.finish a {
+            background-image: none;
+        }
+
+        .WizardButtonsContainer > div.finish a.disabled,
+        .WizardButtonsContainer > div.finish a[disabled],
+        fieldset[disabled] .WizardButtonsContainer > div.finish a,
+        .WizardButtonsContainer > div.finish a.disabled:hover,
+        .WizardButtonsContainer > div.finish a[disabled]:hover,
+        fieldset[disabled] .WizardButtonsContainer > div.finish a:hover,
+        .WizardButtonsContainer > div.finish a.disabled:focus,
+        .WizardButtonsContainer > div.finish a[disabled]:focus,
+        fieldset[disabled] .WizardButtonsContainer > div.finish a:focus,
+        .WizardButtonsContainer > div.finish a.disabled.focus,
+        .WizardButtonsContainer > div.finish a[disabled].focus,
+        fieldset[disabled] .WizardButtonsContainer > div.finish a.focus,
+        .WizardButtonsContainer > div.finish a.disabled:active,
+        .WizardButtonsContainer > div.finish a[disabled]:active,
+        fieldset[disabled] .WizardButtonsContainer > div.finish a:active,
+        .WizardButtonsContainer > div.finish a.disabled.active,
+        .WizardButtonsContainer > div.finish a[disabled].active,
+        fieldset[disabled] .WizardButtonsContainer > div.finish a.active {
+            background-color: #3c3038;
+            border-color: #3c3038;
+        }
+
+        .WizardButtonsContainer > div.finish a .badge {
+            color: #3c3038;
+            background-color: white;
+        }
+
+.WizardStepsNavControl {
+    padding: 12px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+    .WizardStepsNavControl .WizardProgressStep {
+        padding-right: 15px;
+    }
+
+#ctl00_cphMainContent_pnlPropertiesConfig div.FieldOptionItem {
+    background-repeat: no-repeat;
+    padding: 15px 10px 15px 60px;
+    min-width: 520px;
+    background-position: 10px 50%;
+    line-height: normal;
+}
+
+    #ctl00_cphMainContent_pnlPropertiesConfig div.FieldOptionItem.selected {
+        background-color: #fcfbf2;
+    }
+
+    #ctl00_cphMainContent_pnlPropertiesConfig div.FieldOptionItem:hover {
+        background-color: #fcfbf2;
+        cursor: pointer;
+        color: #82ba48;
+    }
+
+#ctl00_cphMainContent_pnlPropertiesConfig div#divDescription {
+    font-size: 12px;
+}
+
+#ctl00_cphMainContent_pnlPropertiesConfig div.optionTitle {
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+    display: inline-block;
+    width: 100%;
+}
+
+#ctl00_cphMainContent_ctl11_Duc10249_lblDial {
+    color: #f00;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#ctl00_cphMainContent_btnRecalculate {
+    color: white;
+    background-color: #3c3038;
+    border-color: #3c3038;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.OrderFinalStepProperties table {
+    margin-top: 30px;
+}
+
+.selectAddressWrapper {
+    width: 28.8%;
+}
+
+#ctl00_cphMainContent_btnRecalculate:hover,
+#ctl00_cphMainContent_btnRecalculate:focus,
+#ctl00_cphMainContent_btnRecalculate.focus,
+#ctl00_cphMainContent_btnRecalculate:active,
+#ctl00_cphMainContent_btnRecalculate.active,
+.open > .dropdown-toggle#ctl00_cphMainContent_btnRecalculate {
+    color: white;
+    border-color: #29a996;
+    background: #64505d;
+}
+
+#ctl00_cphMainContent_btnRecalculate:active,
+#ctl00_cphMainContent_btnRecalculate.active,
+.open > .dropdown-toggle#ctl00_cphMainContent_btnRecalculate {
+    background-image: none;
+}
+
+#ctl00_cphMainContent_btnRecalculate.disabled,
+#ctl00_cphMainContent_btnRecalculate[disabled],
+fieldset[disabled] #ctl00_cphMainContent_btnRecalculate,
+#ctl00_cphMainContent_btnRecalculate.disabled:hover,
+#ctl00_cphMainContent_btnRecalculate[disabled]:hover,
+fieldset[disabled] #ctl00_cphMainContent_btnRecalculate:hover,
+#ctl00_cphMainContent_btnRecalculate.disabled:focus,
+#ctl00_cphMainContent_btnRecalculate[disabled]:focus,
+fieldset[disabled] #ctl00_cphMainContent_btnRecalculate:focus,
+#ctl00_cphMainContent_btnRecalculate.disabled.focus,
+#ctl00_cphMainContent_btnRecalculate[disabled].focus,
+fieldset[disabled] #ctl00_cphMainContent_btnRecalculate.focus,
+#ctl00_cphMainContent_btnRecalculate.disabled:active,
+#ctl00_cphMainContent_btnRecalculate[disabled]:active,
+fieldset[disabled] #ctl00_cphMainContent_btnRecalculate:active,
+#ctl00_cphMainContent_btnRecalculate.disabled.active,
+#ctl00_cphMainContent_btnRecalculate[disabled].active,
+fieldset[disabled] #ctl00_cphMainContent_btnRecalculate.active {
+    background-color: #3c3038;
+    border-color: #3c3038;
+}
+
+#ctl00_cphMainContent_btnRecalculate .badge {
+    color: #3c3038;
+    background-color: white;
+}
+
+#ctl00_cphMainContent_ctl10_lbtnProof {
+    color: #fff;
+}
+
+.footnotes {
+    padding: 15px 0;
+}
+
+.CheckOutPage {
+    list-style: none;
+    padding: 0;
+}
+
+.rgMasterTable {
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+    .rgMasterTable td,
+    .rgMasterTable th {
+        padding: 0;
+    }
+
+        .rgMasterTable td table td,
+        .rgMasterTable th table th {
+            border: 0;
+        }
+
+    .rgMasterTable thead {
+        background-color: #3c3038;
+        color: #fff;
+    }
+
+        .rgMasterTable thead th {
+            padding: 8px 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+            .rgMasterTable thead th a {
+                color: #fff;
+            }
+
+    .rgMasterTable tbody tr:nth-child(odd) {
+        background-color: #e7edf2;
+    }
+
+    .rgMasterTable tbody table tbody tr:nth-child(odd) {
+        background: none;
+    }
+
+.ShoppingCartGrid_Column_Buttons .btn {
+    display: none !important;
+}
+
+.RadGrid .rgMasterTable,
+.RadGrid .rgDetailTable {
+    font-size: 15px;
+    margin-bottom: 15px;
+    width: 100% !important;
+}
+
+    .RadGrid .rgMasterTable label,
+    .RadGrid .rgDetailTable label,
+    .RadGrid .rgEditForm table label {
+        font-weight: normal;
+        margin-right: 10px;
+        width: 20%;
+    }
+
+    .RadGrid .rgMasterTable input[type="text"],
+    .RadGrid .rgMasterTable select,
+    .RadGrid .rgDetailTable input[type="text"],
+    .RadGrid .rgDetailTable select,
+    .RadGrid .rgEditForm table input[type="text"],
+    .RadGrid .rgEditForm table select {
+        margin-bottom: 10px;
+    }
+
+    .RadGrid .rgRow > td,
+    .RadGrid .rgAltRow > td,
+    .RadGrid .rgEditRow > td,
+    .RadGrid .rgFooter > td,
+    .RadGrid .rgHeader,
+    .RadGrid th.rgResizeCol,
+    .RadGrid .rgMasterTable .rgNoRecords td {
+        padding: 10px !important;
+        text-align: left;
+    }
+
+.RadGrid .rgPagerLabel {
+    vertical-align: middle !important;
+}
+
+.RadGrid .rgPager .RadInput {
+    margin: 0 !important;
+    line-height: normal;
+    vertical-align: middle !important;
+}
+
+.rgMasterTable tbody .SiteLink {
+    color: #3c3038;
+}
+
+.RadGrid .rgPager .rgPagerButton {
+    padding-bottom: 0 !important;
+}
+
+.RadGrid td.rgPagerCell {
+    padding: 5px 0 !important;
+}
+
+.RadGrid .rgWrap,
+.RadGrid .rgNumPart a {
+    line-height: 29px !important;
+}
+
+#divRecipientListButtons {
+    margin: 30px 0;
+}
+
+.rgMasterTable tbody .btn-group a {
+    display: none;
+}
+
+    .rgMasterTable tbody .btn-group a:first-child {
+        display: inline;
+    }
+
+.rgMasterTable a {
+    color: #3c3038;
+}
+
+.RadMenu ul.rmGroup {
+    border: 1px solid #;
+}
+
+.rgMasterTable .btn {
+    font-family: Roboto, 'Open Sans', Arial, sans-serif;
+    font-size: 12px;
+    padding: 0 4px;
+    border: none;
+    border-radius: 0 !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #3c3038;
+    border-color: #3c3038;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.rgPager .riSingle .riTextBox {
+    height: 22px !important;
+    padding: 2px !important;
+}
+
+.RadGrid .rgPagerTextBox {
+    text-align: left !important;
+}
+
+.RadGrid .rgPager .rgPagerButton {
+    vertical-align: middle !important;
+    margin-top: 4px !important;
+    padding: 0 5px !important;
+    border: 0 !important;
+    position: relative;
+    top: -2px;
+}
+
+.SiteLink {
+    text-decoration: underline;
+}
+
+    .SiteLink:hover {
+        text-decoration: none;
+    }
+
+.CheckOutPage.panel-default,
+.OrderPriceContainer.panel-default {
+    /*width: 400px;*/
+    float: right;
+    border-radius: 0;
+}
+
+    .CheckOutPage.panel-default .aboveTop,
+    .OrderPriceContainer.panel-default .aboveTop {
+        display: none;
+    }
+
+    .CheckOutPage.panel-default .top,
+    .OrderPriceContainer.panel-default .top {
+        background-color: #e7edf2;
+        color: #3c3038;
+        padding: 6px 12px;
+    }
+
+        .CheckOutPage.panel-default .top dl,
+        .OrderPriceContainer.panel-default .top dl {
+            margin-bottom: 2px;
+        }
+
+        .CheckOutPage.panel-default .top dt,
+        .OrderPriceContainer.panel-default .top dt {
+            display: inline-block;
+        }
+
+        .CheckOutPage.panel-default .top dd,
+        .OrderPriceContainer.panel-default .top dd {
+            display: inline-block;
+            float: right;
+        }
+
+    .CheckOutPage.panel-default .bottom,
+    .OrderPriceContainer.panel-default .bottom {
+        padding: 10px 12px;
+    }
+
+        .CheckOutPage.panel-default .bottom .buttonContainer,
+        .OrderPriceContainer.panel-default .bottom .buttonContainer {
+            display: inline-block;
+        }
+
+            .CheckOutPage.panel-default .bottom .buttonContainer .btn,
+            .OrderPriceContainer.panel-default .bottom .buttonContainer .btn {
+                font-family: Roboto, 'Open Sans', Arial, sans-serif;
+                font-size: 14px;
+                padding: 4px 8px;
+                border: none;
+                border-radius: 0 !important;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #ffffff;
+                background-color: #3c3038;
+                border-color: #3c3038;
+                -webkit-transition: all 0.35s;
+                -moz-transition: all 0.35s;
+                transition: all 0.35s;
+            }
+
+                .CheckOutPage.panel-default .bottom .buttonContainer .btn:hover,
+                .OrderPriceContainer.panel-default .bottom .buttonContainer .btn:hover {
+                    background: #64505d;
+                }
+
+    .CheckOutPage.panel-default .OrderPriceTable,
+    .OrderPriceContainer.panel-default .OrderPriceTable {
+        width: 100%;
+    }
+
+        .CheckOutPage.panel-default .OrderPriceTable #ctl00_cphMainContent_ucOrderPrice_trSubtotal,
+        .OrderPriceContainer.panel-default .OrderPriceTable #ctl00_cphMainContent_ucOrderPrice_trSubtotal {
+            background-color: #e7edf2;
+            color: #3c3038;
+        }
+
+            .CheckOutPage.panel-default .OrderPriceTable #ctl00_cphMainContent_ucOrderPrice_trSubtotal .OrderPriceLabelWidth,
+            .OrderPriceContainer.panel-default .OrderPriceTable #ctl00_cphMainContent_ucOrderPrice_trSubtotal .OrderPriceLabelWidth {
+                padding: 5px 10px;
+            }
+
+        .CheckOutPage.panel-default .OrderPriceTable td,
+        .OrderPriceContainer.panel-default .OrderPriceTable td {
+            padding: 5px 10px;
+        }
+
+#ctl00_cphMainContent_trPaymentMethods table {
+    display: none;
+}
+
+#ctl00_cphMainContent_ucDialCustomization_Duc10273_DropDownList.form-control {
+    min-width: 260px;
+    width: auto;
+}
+
+.OrderPriceLabelWidth {
+    font-weight: bold;
+}
+
+#tblCheckOutComplete {
+    max-width: 425px;
+    margin: 40px auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+    #tblCheckOutComplete td {
+        padding: 5px 25px !important;
+    }
+
+#tdDialCustomization ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#customization table ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    #customization table ul li {
+        overflow: hidden;
+    }
+
+    #customization table ul input,
+    #customization table select {
+        width: 260px;
+    }
+
+#customization table dl {
+    width: 420px;
+}
+
+#customization table dt {
+    float: left;
+    width: 155px;
+    font-weight: normal;
+}
+
+#tdDialCustomization dd {
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+.OrderFinalStepProperties .Duc {
+    margin-bottom: 50px;
+}
+
+.Duc > div > span {
+    padding: 0 0 15px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#tdPropertyList .Duc:last-child {
+    border: 0;
+}
+
+#divDescription .WizardProgressStepInnerTable td[stepstatus=waiting] img {
+    opacity: 0.3;
+}
+
+.nav-tabs > li > a {
+    color: #3c3038;
+}
+
+#ctl00_cphMainContent_ucDialCustomization_updatePanelSlideShow {
+    min-height: 250px;
+}
+
+.PersonalInformation td.TablesTitle {
+    padding: 0 0 30px;
+}
+
+.TablesTitle input[checked=checked] + label {
+    color: #3c3038;
+}
+
+.TablesTitle label {
+    margin: 0;
+    cursor: pointer;
+}
+
+.SubSectionTable a {
+    color: #3c3038;
+    text-decoration: underline;
+}
+
+    .SubSectionTable a:hover {
+        text-decoration: none;
+    }
+
+#UploadRLWrapper {
+    width: 400px;
+}
+
+.boundedBox {
+    margin: 30px 0;
+    float: right;
+}
+
+    .boundedBox td {
+        padding: 5px 10px;
+    }
+
+.OrderDetailsPriceSummary td {
+    border: 1px solid #ccc;
+}
+
+.boundedBox .OrderDetailsPriceSummaryCaption {
+    font-weight: bold;
+}
+
+.orderListTable {
+    width: 100%;
+}
+
+#divAdvSearch input,
+#divAdvSearch select {
+    min-width: 130px;
+}
+
+#divAdvSearch .captionColumn {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px 0;
+    position: relative;
+    max-width: 80px;
+}
+
+#divAdvSearch #trDateRange .datePicker {
+    width: 110px !important;
+    margin-left: 5px;
+}
+
+#divAdvSearch .FormField {
+    width: 300px !important;
+}
+
+#divAdvSearch .riTextBox {
+    min-width: 80px !important;
+    width: 80px;
+}
+
+#divAdvSearch .searchButtonsColumn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.RadPicker .rcCalPopup,
+.RadPicker .rcTimePopup {
+    position: relative;
+    width: 24px !important;
+    height: 26px !important;
+    background: url(../../calendar.png) no-repeat;
+}
+
+.RadPicker .rcTimePopup {
+    background: url(../../watch.png) no-repeat;
+}
+
+.RadCalendar {
+    background-color: #fff;
+    border: 1px solid #3c3038 !important;
+    padding: 5px;
+}
+
+    .RadCalendar a {
+        color: #3c3038;
+    }
+
+        .RadCalendar a:hover {
+            background: #ccc;
+        }
+
+.RadCalendarTimeView a,
+table.RadCalendarTimeView td {
+    padding: 3px !important;
+    transition: inherit !important;
+}
+
+.RadCalendarTimeView td.rcSelected a,
+.RadCalendarTimeView td.rcHover a {
+    border: 0 !important;
+    padding: 0 !important;
+    background: #ccc;
+}
+
+.RadCalendar .rcMainTable {
+    border-collapse: collapse !important;
+}
+
+.RadCalendar thead {
+    background: #dedede;
+}
+
+.RadCalendar th {
+    padding: 3px !important;
+    min-width: 26px;
+    line-height: normal;
+    background: #fefefe;
+    text-align: center;
+}
+
+.RadCalendar td {
+}
+
+#uStoreSkinCultureSelector {
+    padding: 5px 12px;
+    border: 1px solid #634d4e;
+    background: #fff;
+}
+
+.dropdown-menu {
+    min-width: 180px;
+}
+
+#loadingDivTransparent {
+    display: none;
+}
+
+.login-lang {
+    float: right;
+    margin-top: 15px;
+}
+
+    .login-lang .btn-default,
+    .login-lang .btn-default:focus {
+        background: none;
+    }
+
+.CustomizationProperties .nav-tabs {
+    display: none;
+}
+
+.CustomizationProperties .tab-content .tab-pane {
+    display: block;
+    /*float: left;*/
+    visibility: visible;
+}
+
+.CustomizationProperties .tab-content #ctl00_cphMainContent_ucDialCustomization_btnUpdateThumbnails {
+    background-color: #3c3038;
+    color: #ffffff;
+}
+
+    .CustomizationProperties .tab-content #ctl00_cphMainContent_ucDialCustomization_btnUpdateThumbnails:hover {
+        background-color: #64505d;
+    }
+
+#ctl00_cphMainContent_dgShippingItems {
+    border: 0 !important;
+}
+
+.ui-dialog {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px 20px 10px;
+    font-size: 15px;
+    min-width: 250px;
+}
+
+    .ui-dialog[aria-labelledby="ui-id-12"] {
+        min-width: 150px !important;
+    }
+
+        .ui-dialog[aria-labelledby="ui-id-12"] .ui-dialog-titlebar {
+            background: none;
+        }
+
+    .ui-dialog .ui-dialog-title {
+        font: bold 18px/2em 'Oswald', Arial, sans-serif;
+        margin: 0 0 20px !important;
+        float: none !important;
+    }
+
+    .ui-dialog .ui-dialog-titlebar-close .ui-corner-all .ui-state-hover {
+        display: none;
+    }
+
+    .ui-dialog .ui-icon-closethick {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        color: #fff;
+        text-align: center;
+        line-height: 1px;
+    }
+
+        .ui-dialog .ui-icon-closethick:after {
+            content: 'Х';
+            display: block;
+            color: #3c3038;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+    .ui-dialog .ImgPreview {
+        background-color: #ffffff !important;
+    }
+
+    .ui-dialog .popupFooter {
+        border: none;
+        background-color: #ffffff;
+    }
+
+    .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {
+        border: 0;
+        background: none;
+    }
+
+.popupContentInner {
+    padding: 0;
+}
+
+.ImgPreview {
+    background-color: #ffffff !important;
+    width: 400px;
+    float: left;
+}
+
+.imageInfoLinePreview {
+    width: 280px !important;
+    background-color: #ffffff !important;
+    float: left !important;
+    position: relative !important;
+    bottom: 0 !important;
+}
+
+    .imageInfoLinePreview .PreviewInfo,
+    .imageInfoLinePreview .PreviewInfoDimensions {
+        color: #30c6af;
+    }
+
+.popupFooter {
+    border: none;
+    background: none;
+    background-color: #ffffff;
+}
+
+#ctl00_cphMainContent_ucDialCustomization_updatePanelSlideShow {
+    border: 1px solid grey;
+    padding: 5px;
+    margin-bottom: 25px;
+    float: left;
+}
+
+#ctl00_cphMainContent_ucDialCustomization_SlideShow_divWrapper .gallerylayer {
+    width: auto !important;
+}
+
+    #ctl00_cphMainContent_ucDialCustomization_SlideShow_divWrapper .gallerylayer img {
+        width: 100% !important;
+    }
+
+#ctl00_cphMainContent_ucDialCustomization_SlideShow_divWrapper #divProgress {
+    height: auto !important;
+}
+
+#ctl00_cphMainContent_Stepsnav1_MyList {
+    display: none;
+}
+
+.RadMenu_Default {
+    background-color: #ffffff;
+}
+
+    .RadMenu_Default a {
+        color: #3c3038;
+    }
+
+#ctl00_cphMainContent_lblRecipient_RecipientDataGrid_ctl00 .rgFilterRow input {
+    width: 74px;
+    color: #30c6af;
+}
+
+.RLEditorContainer {
+    overflow-x: visible !important;
+}
+
+.RadGrid .rgHeader,
+.RadGrid th.rgResizeCol {
+    font-family: Roboto !important;
+}
+
+.RadGrid .rgRow,
+.RadGrid .rgAltRow,
+.RadGrid .rgHeader,
+.RadGrid .rgResizeCol,
+.RadGrid .rgPager,
+.RadGrid .rgGroupPanel,
+.RadGrid .rgGroupHeader {
+    font-family: Roboto !important;
+}
+
+.RadGrid .rgFilterBox {
+    color: #3c3038;
+    font-family: Roboto !important;
+}
+
+.RadGrid .rgFilterRow img,
+.RadGrid .rgFilterRow input {
+    vertical-align: top !important;
+}
+
+.RadGrid_Default {
+    border: 0 !important;
+    width: auto !important;
+}
+
+    .RadGrid_Default .rgMasterTable {
+        font-size: 15px !important;
+    }
+
+    .RadGrid_Default .rgHeader {
+        background: none !important;
+        color: #fff !important;
+        border: 0 !important;
+    }
+
+    .RadGrid_Default .rgHeader {
+        text-align: left !important;
+    }
+
+    .RadGrid_Default .rgAltRow > td {
+        border-color: #ccc !important;
+    }
+
+    .RadGrid_Default .rgAltRow {
+        background: none !important;
+    }
+
+.footerButtons .btn {
+    font-family: Roboto, 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 0 !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    background-color: #82ba48;
+    border-color: #82ba48;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+    .footerButtons .btn:hover {
+        background: #52970b;
+    }
+
+.TemplatesHolder {
+    padding: .5em 1em !important;
+}
+
+.popupFooter {
+    bottom: 0 !important;
+    right: 20px !important;
+}
+
+.progressBarDialog {
+    border-radius: 4px !important;
+}
+
+#txtQuantityPerRecipient {
+    font-size: 16px;
+    margin-left: -8px;
+    height: auto;
+    padding: 2px 8px !important;
+}
+
+#divProgressBar {
+    width: 300px !important;
+}
+
+#UploadProgressBarDialog,
+.DocumentMenuDialog {
+    padding: 10px !important;
+}
+
+.text-primary {
+    color: #3c3038;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.full-view .col {
+    padding: 0;
+}
+
+.WizardButtonsContainer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.RightMenuWrapper {
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .RightMenuWrapper h3 {
+        font-size: 16px;
+    }
+
+.PropListWrapper {
+    border-color: #ccc;
+    width: 100%;
+    padding: 5px;
+    border-top-style: solid;
+}
+
+.ui-dialog {
+    min-width: 200px !important;
+}
+
+    .ui-dialog .NewItemMenuTitle {
+        font: 26px/30px 'Oswald', Arial, sans-serif;
+        margin: 0 0 15px;
+        display: block;
+    }
+
+    .ui-dialog ul {
+        margin: 0;
+        padding: 0 0 0 30px;
+        list-style: none;
+    }
+
+        .ui-dialog ul li {
+            margin: 0 0 5px;
+            padding: 0;
+            list-style: disc;
+            cursor: pointer;
+        }
+
+    .ui-dialog .ui-dialog-content {
+        overflow: scroll;
+        min-height: 300px !important;
+    }
+
+#filterDiv input {
+    padding: 5px 10px;
+}
+
+    #filterDiv input[type="button"]:hover {
+        background: #52970b;
+    }
+
+#filterTable td {
+    padding: 10px 0;
+}
+
+    #filterTable td label {
+        margin: 0 10px 0 0;
+    }
+
+#PrintProprtiesDialog .VerticalMenuDiv ul li:hover,
+#PrintProprtiesDialog .VerticalMenuDiv_ul_li_active {
+    background: #82ba48;
+    color: #fff;
+}
+
+#PrintProprtiesDialog .propertyWrapper {
+    background: none !important;
+}
+
+#PrintProprtiesDialog .HorizontalMenuDataList {
+    border: 0;
+}
+
+#ContainerDivLeft {
+    margin-bottom: 15px;
+}
+
+.list-group-item:last-child {
+    border-radius: 0;
+}
+
+.ui-widget-header {
+    background: none;
+    height: 10px;
+}
+
+.ui-widget-content a {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.BasicDialogContainer .ui-dialog-titlebar {
+    min-height: 50px;
+    background: #ccc;
+    color: #333 !important;
+    line-height: normal;
+}
+/*.productName:hover .linkEditNickName {
+  display: none !important;
+}*/
+#uEditContainer {
+    margin-bottom: 25px !important;
+    clear: both;
+}
+
+.uEdit-area .btn {
+    background: none;
+}
+
+.uEdit-area .panel-title {
+    font: 16px/20px 'Oswald', Arial, sans-serif;
+    color: #000;
+}
+
+.uedit-application .simple-controls-container a {
+    margin-top: 2px !important;
+}
+
+.PersonalInformation .FormLabel {
+    width: 60%;
+}
+
+#detailsTable .form-group {
+    overflow: hidden;
+}
+
+    #detailsTable .form-group .Normal {
+        float: left;
+        width: 10%;
+        margin-right: 10px;
+    }
+
+.popupContent table td,
+#filterStrTable table td {
+    padding-bottom: 15px;
+}
+
+    .popupContent .FormLabel,
+    #filterStrTable table td label {
+        font-weight: normal;
+        font-size: 14px;
+    }
+
+#tblAddressEdit input[type=text],
+#tblAddressEdit select {
+    width: 295px;
+}
+
+#filterStrTable table td label {
+    margin-right: 10px;
+}
+
+#filterStrTable .btn {
+    float: left;
+}
+
+.breadCrumbs {
+    margin-bottom: 25px;
+}
+
+    .breadCrumbs > span + span:before {
+        padding: 0 8px 0 5px;
+        color: #666;
+        content: "\02C3";
+    }
+
+.uedit-application .combo .combo-caret {
+    border-radius: 0 4px 4px 0 !important;
+}
+
+    .uedit-application .combo .combo-caret > a {
+        margin-top: 0 !important;
+        line-height: 17px !important;
+        height: 20px;
+        width: 16px;
+    }
+
+.priceExplainTooltip {
+    position: relative;
+}
+
+    .priceExplainTooltip:hover .InfoPopup {
+        display: block;
+    }
+
+.InfoPopup {
+    display: none;
+    position: absolute;
+    background: #fcfbf2;
+    border-radius: 5px;
+    color: #000;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 10px 15px;
+    -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px 5px rgba(0,0,0,.1);
+    min-width: 250px;
+    z-index: 1000;
+}
+
+.tblPriceTags .InfoButton {
+    margin-left: 5px;
+}
+
+.FieldOptionItem.FOList {
+    border-bottom: 0;
+}
+
+.table-responsive {
+    overflow: visible;
+}
+
+.HasXmpTooltip:hover {
+    position: relative;
+}
+
+    .HasXmpTooltip:hover .XmpTooltipPopup {
+        display: block;
+    }
+
+.XmpTooltipPopup {
+    display: none;
+    position: absolute;
+    margin: 5px 0 0 15px;
+    background: #fcfbf2;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 10px 15px;
+    -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px 5px rgba(0,0,0,.1);
+}
+
+#ctl00_cphMainContent_OrderNumber {
+    color: #52970b;
+}
+
+.OrderDetailsTdRounding {
+    width: 100%;
+    overflow: hidden;
+    text-align: right;
+}
+
+#foldersContainer .subfolderContainer, #filesContainer .fileContainer {
+    overflow: hidden;
+    height: 50px;
+}
+
+#filesContainer .fileExtensionpdf {
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#filesContainer .fileName,
+#UploadFileDialog {
+    line-height: normal;
+    font-size: 14px;
+}
+
+#PropListWrapper {
+    width: 217px !important;
+    height: auto !important;
+}
+
+.mainAreaFooterFullWidth {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.checkoutSubmissionOrderPriceContainerContainer {
+    float: right;
+}
+
+    .checkoutSubmissionOrderPriceContainerContainer .OrderPriceTable td {
+        border-top: 1px solid #ccc;
+    }
+
+.boxSeparator,
+#ctl00_cphMainContent_ucOrderPrice_trSeperator2 {
+    display: none;
+}
+
+#ctl00_cphMainContent_ctl11_Duc10445_ucDatePicker1_radCalendar1_wrapper {
+    float: left;
+}
+
+.dddlName {
+    float: left;
+}
+
+#tblNumCopies input[type="text"],
+#tblNumCopies .form-control {
+    min-width: auto !important;
+    width: 40px;
+}
+
+#ctl00_cphMainContent_pnlPropertiesConfig .OrderFinalStepProperties table {
+    margin-top: 0;
+}
+
+    #ctl00_cphMainContent_pnlPropertiesConfig .OrderFinalStepProperties table caption,
+    #ctl00_cphMainContent_ctl11_Duc10445_ucTimePicker1_radSendTime_timeView_tdl caption {
+        padding: 0;
+    }
+
+#ctl00_cphMainContent_pnlPropertiesConfig .OrderFinalStepProperties .Duc {
+    margin-bottom: 30px;
+}
+
+.datetimeWrapper div {
+    float: left;
+}
+
+#tdPropertyList div {
+    overflow: hidden;
+    margin: 0 10px 0 0;
+}
+
+#ctl00_cphMainContent_pnlPropertiesConfig table {
+    float: left;
+}
+
+.RadCalendarTimeView {
+    background: #fff;
+    border-color: #000;
+}
+
+.RadCalendar .rcRow td {
+    border-width: 1px 0 0 1px !important;
+}
+
+.RadCalendar .rcMain .rcRow a,
+.RadCalendar .rcMain .rcRow span {
+    padding: 0 !important;
+}
+
+.RadCalendar .rcRow td,
+.RadCalendar .rcWeek th {
+    text-align: center !important;
+}
+
+.RadCalendar td.rcOtherMonth a,
+.RadCalendar td.rcOutOfRange span {
+    color: #ccc;
+    font-weight: normal;
+}
+
+    .RadCalendar td.rcOtherMonth a:hover {
+        color: #3c3038;
+    }
+
+.RadMenu ul.rmGroup {
+    padding: 5px !important;
+    border: 1px solid #64505d;
+}
+
+.RadGrid .rgFilterRow > td {
+    padding: 10px !important;
+}
+
+    .RadGrid .rgFilterRow > td > input[type="text"] {
+        margin-bottom: 0;
+    }
+
+.RadMenu .rmGroup .rmText {
+    padding: 3px 30px 2px 10px !important;
+    margin: 0 !important;
+    line-height: normal;
+}
+
+.OrderFinalStepProperties a.options {
+    display: inline-block;
+    background: #82ba48;
+    padding: 1px 10px;
+    color: #fff;
+}
+
+    .OrderFinalStepProperties a.options:hover {
+        text-decoration: none;
+        background: #52970b;
+    }
+
+.RadCalendarTimeView th {
+    background: #ccc;
+    border-bottom: 1px solid #000 !important;
+}
+
+.addressPaneAddAddress {
+    overflow: hidden;
+    width: 570px;
+}
+
+    .addressPaneAddAddress a.formSelectionField {
+        background: #3c3038;
+        padding: 1px 5px;
+        color: #fff !important;
+    }
+
+        .addressPaneAddAddress a.formSelectionField:hover {
+            text-decoration: none;
+            background: #64505d;
+        }
+/*#ctl00_cphMainContent_trShipping .boundedBox td {
+  padding: 0 !important;
+} */
+div[tabindex=""]::focus {
+    outline: none;
+}
+
+table.RadCalendarMonthView {
+    background: #fff !important;
+}
+
+#hrDivSplitter {
+    display: none;
+}
+
+.WizStepTR[stepstatus="waiting"] {
+    opacity: .5;
+}
+
+.WizStepTR[stepstatus="active"] {
+    opacity: 1;
+}
+
+.linkEditNickName {
+    background: rgba(0, 0, 0, 0) url("/uStore/Images/icon-edit.gif") no-repeat scroll 0 0;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin-top: 3px;
+    vertical-align: top;
+}
+
+.productName:hover .linkEditNickName {
+    display: inline-block;
+}
+
+.divNickName .lblNickname {
+    display: inline-block !important;
+    font-size: 13px;
+}
+
+input[type="text"].txtNickName {
+    display: none;
+    font-size: 13px;
+    line-height: 13px;
+    margin-top: 7px;
+}
+
+.rgMasterTable .productName {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.ShoppingCartGrid_Column_ProductName {
+    width: 350px !important;
+    overflow: hidden;
+}
+/* footer styles */
+footer {
+    float: left;
+    width: 100%;
+    padding: 75px 30px;
+}
+
+    footer span {
+        font: 14px Arial, Tahoma, sans-serif;
+    }
+
+    footer a {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #3c3038;
+        margin-top: 20px;
+        line-height: 85px;
+        color: #fff;
+    }
+
+        footer a:hover {
+            color: white;
+            background: #64505d;
+        }
+
+    footer .fa-3x {
+        font-size: 2.5em;
+    }
+
+/* new styles */
+.item-box-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.subcatlink {
+    text-decoration: none;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.collage {
+    background-color: #fcfbf2;
+    border: solid 1px black;
+    text-align: center;
+}
+
+    .collage h3 {
+        background-color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+        color: #ffffff;
+        font-family: sans-serif;
+        text-align: left;
+        padding-left: 15px;
+        position: absolute;
+        width: 100%;
+        margin: 0px !important;
+        bottom: 5px;
+    }
+
+.collage1, .collage2, .collage3 {
+    max-height: 70%;
+    max-width: 29%;
+    vertical-align: middle;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: solid 1px black;
+}
+
+.collage1, .collage3 {
+    margin-top: -8%;
+}
+
+.collage2 {
+    margin-top: 8%;
+}
+
+.collage1x {
+    position: relative;
+    height: 350px;
+    line-height: 350px;
+}
+
+    .collage1x h3 {
+        height: 70px;
+        line-height: 70px;
+    }
+
+.collage2x {
+    position: relative;
+    height: 250px;
+    line-height: 250px;
+}
+
+    .collage2x h3 {
+        height: 60px;
+        line-height: 60px;
+    }
+
+.collage3x {
+    position: relative;
+    height: 150px;
+    line-height: 150px;
+}
+
+    .collage3x h3 {
+        height: 50px;
+        line-height: 50px;
+    }
+
+.group-without-product {
+    border-width: 0px;
+}
+
+
+/* BREAKPOINTS STYLES START */
+/* breakpoint 1300 */
+@media (max-width: 1300px) {
+    header .carousel-caption {
+        font-size: 16px;
+        padding: 20px 40px;
+    }
+
+        header .carousel-caption h2 {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+
+        header .carousel-caption .btn {
+            padding: 10px;
+            width: 150px;
+            margin-left: -75px;
+        }
+
+    #tdPropertyList .Duc {
+        width: 50%;
+    }
+}
+/* breakpoint 991 */
+@media (max-width: 991px) {
+    .navbar-default .navbar-header .navbar-brand {
+        margin: 0 auto;
+        width: 176px;
+    }
+
+    header .carousel-caption {
+        padding: 20px;
+        top: 15%;
+        bottom: 15%;
+        left: 15%;
+        right: 15%;
+    }
+
+        header .carousel-caption h2 {
+            font-size: 25px;
+        }
+
+    .navbar-default .nav > li .form-group.search input {
+        max-width: 140px;
+        padding-right: 30px;
+    }
+
+    header .carousel-caption h2 {
+        font-size: 35px;
+    }
+
+    .category-main-inner {
+        position: static;
+    }
+
+        .category-main-inner .product-box {
+            margin-bottom: 20px;
+            background: rgba(61, 44, 39, .9);
+        }
+
+        .category-main-inner .product-box {
+            border-right: 1px solid #ffffff;
+            min-height: 175px;
+        }
+
+            .category-main-inner .product-box h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+    #tblMain #ctl00_cphMainContent_trPricingTable,
+    #tblMain #ctl00_cphMainContent_trPricingTableLink {
+        position: static;
+    }
+
+    #ctl00_cphMainContent_lnbShowPricingTable {
+        margin: 0 0 20px;
+        background: #3c3038;
+        padding: 6px 12px;
+        color: #fff !important;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    #tblMain .SiteLink {
+        margin-bottom: 25px;
+    }
+
+    #ContainerDivRight {
+        float: left !important;
+        width: 100% !important;
+    }
+
+    .RightMenuWrapper {
+        width: 100% !important;
+    }
+
+    #PropListWrapper {
+        width: 100% !important;
+    }
+}
+
+/* breakpoint 768 */
+@media (max-width: 767px) {
+    .navbar-default .navbar-collapse {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+        .navbar-default .navbar-collapse.in {
+            overflow: visible !important;
+        }
+
+    .small-menu-item {
+        float:left;
+        border: 0!important;
+    }
+
+    .larger-menu-item{
+        float: left;
+        border:0!important;
+    }
+
+    .navbar-default .navbar-header {
+        float: left;
+        margin-left: 10px;
+    }
+
+    .navbar-default .navbar-right {
+        float: left !important;
+        margin: 0;
+        width: 100%;
+    }
+
+
+    .navbar-default .dropdown-menu {
+        background-color: #ffffff !important;
+    }
+
+        .navbar-default .dropdown-menu ul.user li a {
+            float: left !important;
+        }
+
+    .navbar-default .search {
+        width: 320px !important;
+    }
+
+        .navbar-default .search input {
+            max-width: 320px !important;
+        }
+
+    .navbar-default .lang {
+        max-width: 78px;
+    }
+
+    .carousel-caption h2 {
+        font-size: 26px;
+    }
+
+    .carousel-caption p {
+        font-size: 14px;
+    }
+
+    .carousel-caption .btn {
+        position: absolute;
+        z-index: 11;
+        left: 50%;
+        bottom: 5%;
+        width: 140px;
+        margin-left: -70px;
+        padding: 5px 10px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+    }
+
+    section.product-page .description {
+        padding-top: 25px;
+    }
+
+        section.product-page .description .form-group {
+            display: inline-block;
+        }
+
+            section.product-page .description .form-group:last-child {
+                padding-top: 2px;
+            }
+
+            section.product-page .description .form-group .form-control {
+                display: inline-block;
+                width: auto;
+            }
+
+    #tdPropertyList .Duc {
+        width: 100%;
+        float: none;
+    }
+
+        #tdPropertyList .Duc .FormLabel {
+            background: #ccc;
+            padding: 10px 0 10px 10px;
+        }
+}
+
+.carousel-inner {
+    background: #2b1d1c;
+    margin-top: 35px;
+}
+
+/* breakpoint 640 */
+@media (max-width: 640px) {
+
+    .carousel-caption {
+        top: 15%;
+        bottom: 15%;
+        left: 15%;
+        right: 15%;
+    }
+
+    .carousel-inner > .item:after {
+        background: rgba(61, 44, 39, 1);
+    }
+    
+    .larger-menu-item{
+        float: none;
+    }
+
+    .small-menu-item {
+        float:left;
+        border: 0!important;
+    }
+
+    .carousel-indicators .active {
+        background-color: #fff;
+    }
+
+    .carousel-inner > .item > a > img,
+    .carousel-inner > .item > img {
+        width: 700px !important;
+        max-width: inherit;
+    }
+
+    .carousel-caption h2 {
+        font-size: 24px;
+    }
+
+    .carousel-caption p {
+        font-size: 14px;
+    }
+
+    .carousel-caption .btn {
+        position: absolute;
+        z-index: 11;
+        left: 50%;
+        bottom: 5%;
+        width: 140px;
+        margin-left: -70px;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .category-main-inner .product-box h3 {
+        font-size: 14px;
+    }
+}
+/* breakpoint 480 */
+@media (max-width: 480px) {
+    header .carousel-caption h2 {
+        font-size: 18px;
+    }
+
+    .larger-menu-item{
+        float: none;
+    }
+
+    .small-menu-item {
+        float:left;
+        border: 0!important;
+    }
+
+    .carousel-inner > .item > a > img,
+    .carousel-inner > .item > img {
+        display: none;
+    }
+
+    .carousel-inner > .item {
+        height: 350px;
+    }
+
+    .navbar-default ul.product-gallery li a {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar-default .nav .dropdown-menu ul.product-gallery {
+        padding: 10px 0;
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+#CultureSelector {
+    padding: 5px 12px;
+    border: 1px solid #634d4e;
+    background: #fff;
+}
+
+.divSoldOut {
+    background-image: url(../Images/SoldOut_big.png);
+    position: absolute;
+    z-index: 1000;
+    top: 85px;
+    right: 0px;
+    width: 109px;
+    height: 29px;
+    color: White;
+    font-size: 12px;
+    line-height: 2.4em;
+    display: inline !important;
+    text-align: center;
+    cursor: default;
+}
+
+.soldOut {
+    color: red;
+}
+
+.inStock {
+
+}

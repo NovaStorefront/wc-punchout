@@ -1,0 +1,204 @@
+﻿<div class="navbar navbar-default" role="navigation" ng-controller="headerController">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top ng-scope" src="templates.NavigationBar">
+        <div class="header-father-wrap">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed ng-scope" data-toggle="collapse"
+                        data-target="#main-nav-menu">
+                    <span class="sr-only ng-binding">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="logo-wrapper" href="#/home">
+                    <img id="logo" ng-src="Content/images/logo.png" border="0" alt="" src="Content/images/logo.png">
+                </a>
+                <ul class="nav navbar-nav navbar-right aquablue-navbar-right">
+                    <li class="father-toggle" ng-class="{ active: isActive('/products')}">
+                        <a ng-mouseover="customHoverIn()" class="header-toggle dropdown-toggle product ng-binding"
+                           data-toggle="dropdown">{{session.settings.localization.productGallery}}</a>
+
+                        <div class="dropdown-menu tooltip-main-wrapper" ng-mouseleave="hoverOut()">
+                            <div class="tooltip-wrapper">
+                                <ul class="product-gallery">
+                                    <li class="dropdown-li-item"
+                                        ng-repeat="groupInfo in productGroupsList | filter: {'parentId': -1}"
+                                        ng-mouseover="hoverIn($event,groupInfo)"
+                                        ng-click="$location.path('/products/' + groupInfo.id)">
+                                        <a class="product-gallery-link" ng-bind-html="groupInfo.name"></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="expanded-category-panel expanded-menu" ng-show="showExpandedMenu">
+                                <div class="categories-wrapper-header">
+                            <span ng-click="$location.path('/products/' + chosenGroup.id)"
+                                  ng-bind-html="chosenGroup.name"></span>
+                                    <div ng-click="$location.path('/products/' + chosenGroup.id)">See featured
+                                        products
+                                    </div>
+                                </div>
+
+                                <div class="view-columns">
+                                    <div ng-repeat="item in productGroupsList | filter: {'parentId': chosenGroup.id}"
+                                         class="column category"><a ng-click="$location.path('/products/' + item.id)"
+                                                                    class="category-l2 truncate"
+                                                                    ng-bind-html="item.name"></a></div>
+                                    <div ng-repeat="item2 in productGroupsList | filter: {'parentId': chosenGroup.id}">
+                                        <div ng-repeat="subgroup in productGroupsList | filter: {'parentId': item2.id}"
+                                             class="column category">
+                                            <a ng-click="$location.path('/products/' + subgroup.id)"
+                                               class="category-l3 truncate" ng-bind-html="subgroup.name"></a></div>
+                                    </div>
+                                    <div class="column category-image-column">
+                                        <div class="category-image-wrapper"><img ng-show="chosenGroup.imageBase64"
+                                                                                 src="data:image/png;base64,{{chosenGroup.imageBase64}}"
+                                                                                 class="category-image"/>
+                                            <img ng-show="!chosenGroup.imageBase64" src="content/images/default.png"
+                                                 class="category-image"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+
+            </div>
+            <ul class="header-product-gallery nav navbar-nav right" role="tablist">
+                <li class="child-toggle dropdown" ng-repeat="groupInfo in productGroups">
+                    <a class="child-toggle-link dropdown-toggle" ng-click="$location.path('/products/' + groupInfo.id)"
+                       ng-bind-html="groupInfo.name"
+                       data-toggle="dropdown"></a>
+                    <div class="category-panel dropdown-menu" role="menu">
+                        <div class="categories-wrapper-header">
+                            <span ng-click="$location.path('/products/' + groupInfo.id)"
+                                  ng-bind-html="groupInfo.name"></span>
+                            <div ng-click="$location.path('/products/' + groupInfo.id)">See featured products</div>
+                        </div>
+
+                        <div class="view-columns">
+                            <div ng-repeat="item in productGroupsList | filter: {'parentId': groupInfo.id}"
+                                 class="column category"><a ng-click="$location.path('/products/' + item.id)"
+                                                            class="category-l2 truncate"
+                                                            ng-bind-html="item.name"></a>
+                                <div class="" ng-repeat="subgroup in productGroupsList | filter: {'parentId': item.id}">
+                                    <a ng-click="$location.path('/products/' + subgroup.id)"
+                                       class="category-l3 truncate" ng-bind-html="subgroup.name"></a>
+                                </div>
+                            </div>
+
+                            <div class="column category-image-column">
+                                <div class="category-image-wrapper"><img ng-show="groupInfo.imageBase64"
+                                                                         src="data:image/png;base64,{{groupInfo.imageBase64}}"
+                                                                         class="category-image"/>
+                                    <img ng-show="!groupInfo.imageBase64" src="content/images/default.png"
+                                         class="category-image"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse navbar-expand-lg ng-scope" id="main-nav-menu"
+                 ng-if="customer.uStoreUserId">
+                <ul class="nav navbar-nav navbar-right aquablue-navbar-right">
+                    <li>
+                        <div class="form-group search"
+                             ng-if="customer.uStoreUserId && session.settings.showProductSearch">
+                            <div class="aquablue-search" ng-if="session.settings.showPopUpSearch">
+                                <input type="text" class="form-control" id="search"
+                                       ng-model="search.query"
+                                       ng-keypress="$event.which == 13 ? sendSearchRequest() : ''"
+                                       placeholder="Search products">
+                                <div class="search-button"><img style="width:21px; height: 21px"
+                                                                src="Content/images/search.svg"
+                                                                ng-click="sendSearchRequest()"/></div>
+                            </div>
+                            <div class="aquablue-search" ng-if="!session.settings.showPopUpSearch">
+                                <input placeholder="Search Products" type="text" class="form-control" id="search"
+                                       ng-model="search.query"
+                                       ng-keypress="$event.which == 13 ? sendSearchRequest() : ''">
+                                <div class="search-button"><img style="width:21px; height: 21px"
+                                                                src="Content/images/search.svg"
+                                                                ng-click="sendSearchRequest()"/></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group lang dropdown" ng-show="session.settings.cultures.length > 1">
+                            <button class="btn btn-default dropdown-toggle"
+                                    type="button"
+                                    id="CultureSelector"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="true">
+
+                                <img id="flag"
+                                     ng-src="Content/images/flags/{{session.rootScope.selectedCulture.cultureCode}}.svg"
+                                     border="0" alt=""
+                                     src="Content/images/flags/{{session.rootScope.selectedCulture.cultureCode}}.svg">
+                            </button>
+                            <ul class="dropdown-menu"
+                                aria-labelledby="CultureSelector"
+                                ng-model="session.rootScope.selectedCulture">
+                                <li ng-repeat="culture in session.settings.cultures"
+                                    ng-click="changeCulture(culture)"
+                                    ng-init="$last && initCulture()">
+        <span>
+            <span>
+                <img id="flagMenu" ng-src="Content/images/flags/{{culture.cultureCode}}.svg" border="0" alt=""
+                     src="Content/images/flags/{{culture.cultureCode}}.svg">
+            </span>
+            <span style="margin-left: 10px">{{culture.displayName}}</span>
+        </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li ng-if="customer.uStoreUserId" ng-class="{ active: isActive('/shoppingCart')}"
+                        ng-click="$location.path('/shoppingCart')">
+                        <a class="nav-icon">
+                            <div ng-controller="shoppingCartController"
+                                 ng-if="session.rootScope.customer.itemsInCart > '0'" class="cart-count-badge">
+                                {{session.rootScope.customer.itemsInCart}}
+                            </div>
+                            <img src="Content/images/cart.svg" aria-hidden="true"
+                                 ng-attr-title="{{session.settings.localization.shoppingCart}}"></img><span
+                                class="sr-only">Cart</span></a>
+                    </li>
+                    <li class="small-menu-item" ng-if="customer.uStoreUserId"
+                        ng-class="{ active: isActive('/customerInfo')}" ng-click="$location.path('/customerInfo')">
+                        <a class="nav-icon dropdown-toggle" data-toggle="dropdown"><img
+                                src="Content/images/user.svg"></img></a>
+                    </li>
+
+                    <li ng-if="customer.uStoreUserId" ng-click="exit()">
+                        <a class="nav-icon"
+                           ng-style="{ color: session.rootScope.maySignOut ? '' : 'silver', cursor: session.rootScope.maySignOut ? '' : 'default' }">
+                            <i class="fa fa-sign-out fa-2x" aria-hidden="true"
+                               ng-attr-title="{{session.settings.localization.returnToPunchout}}"></i><span
+                                class="sr-only">Return to EREQ</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="search-result" ng-show="session.settings.showPopUpSearch">
+        <div ng-show="search.productSearchResult.length">
+            <div ng-repeat="product in search.productSearchResult">
+                <a onclick="goToUStore(this.getAttribute('productid'))" productid="{{product.id}}">
+                    <h5 ng-bind-html="product.name"></h5>
+                </a>
+            </div>
+        </div>
+        <div ng-if="search.productSearchResult.length == 0">
+            <h5>Empty Search Result</h5>
+        </div>
+    </div>
+</div>
+<div style="width: 100%" ng-if="$location.$$path.indexOf('/home') != -1 && customer.uStoreUserId"
+     ng-include src="'Content/html-templates/store-description.html'">
+</div>

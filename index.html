@@ -1,0 +1,57 @@
+﻿<html ng-app="app" ng-controller="controller">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap-formhelpers.css" rel="stylesheet" />
+    <link href="Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="Content/css/ustore.css" rel="stylesheet" />
+    <link href="Content/css/app-styles.css" rel="stylesheet" />
+    <!--<link href="Content/css/custom.css" rel="stylesheet" />-->
+    <!--libraries-->
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/lodash.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/spin.min.js"></script>
+    <script src="Scripts/angular-spinner.min.js"></script>
+    <script src="Scripts/angular-sanitize.min.js"></script>
+
+    <!--own scripts-->
+    <script src="Scripts/app-engine/custom-app.js"></script>
+    <script src="Scripts/app-engine/app.js"></script>
+    <script src="Scripts/app-engine/sessionService.js"></script>
+    <script src="Scripts/app-engine/commonApiService.js"></script>
+    <script src="Scripts/app-engine/headerController.js"></script>
+    <script src="Scripts/app-engine/footerController.js"></script>
+    <script src="Scripts/app-engine/homeController.js"></script>
+    <script src="Scripts/app-engine/productsController.js"></script>
+    <script src="Scripts/app-engine/shoppingCartController.js"></script>
+    <script src="Scripts/app-engine/customerInfoController.js"></script>
+    <script src="Scripts/app-engine/helpInfoController.js"></script>
+    <script src="Scripts/app-engine/submissionFormController.js"></script>
+</head>
+<body>
+    <div id="cloud">
+        <div ng-controller="headerController" ng-include src="'Content/html-templates/header.html'"></div>
+        <div class="view container">
+            <div ng-show="customer.uStoreUserId > 0">
+                <div style="color:red;" ng-bind="excMessage"></div>
+                <div ng-view></div>
+            </div>
+            <div ng-show="customer.uStoreUserId == 0" class="loginMsg">{{session.settings.localization.pleaseLogin}}</div>
+            <span us-spinner="{ radius:30, width:8, length: 16, position: 'absolute' }"
+                  spinner-key="spinner-1"></span>
+            <span ng-show="customer.uStoreUserId && $location.$$path.indexOf('/home') != -1"
+                  us-spinner="{ radius:30, width:8, length: 16, position: 'relative' }"
+                  spinner-key="spinner-2"></span>
+        </div>
+        <div ng-controller="footerController" ng-include src="'Content/html-templates/footer.html'"></div>
+    </div>
+</body>
+</html>

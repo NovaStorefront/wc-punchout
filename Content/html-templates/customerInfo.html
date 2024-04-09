@@ -1,0 +1,16 @@
+﻿<div class="container">
+    <h2>
+        {{session.settings.localization.customerInformationDetails}}
+    </h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{session.settings.localization.name}}: {{$parent.customer.firstName}} {{$parent.customer.lastName}}<br />
+            {{session.settings.localization.email}}: {{$parent.customer.email}}<br />
+            {{session.settings.localization.userId}}: {{$parent.customer.uStoreUserId}}<br />
+            {{session.settings.localization.externalId}}: {{$parent.customer.externalId}}
+            <br />
+            <br />
+            <input type="button" value="Clear uStore Cart" ng-show="session.getOrderId() > 0" ng-click="clearuStoreCart()" />
+        </div>
+    </div>
+</div>

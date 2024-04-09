@@ -1,0 +1,426 @@
+﻿/* 
+PMS 361 - #4DAA50
+PMS 5535 - #485956 
+red - #F44336
+black - #333
+grey - #ddd
+*/
+
+a,
+a:hover, 
+a:focus,
+.btn-primary .badge {
+    color: #333;
+}
+
+.help a:hover,
+.help a:focus,
+.breadcrumb li > a {
+    color: #4DAA50;
+}
+
+.breadcrumb li > a:hover {
+    color: #485956 !important;
+}
+
+input[type=submit],
+input[type="button"],
+.btn-default {
+    background-color: #4DAA50;
+    border: none;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-color: #485956 !important;
+    color: #fff !important;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #4DAA50 !important;
+    border-color: #4DAA50 !important;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    background-color: #ddd;
+    border-color: #ddd
+}
+
+#tblRegistration .SmallLink {
+    background-color: #333;
+}
+
+.navbar-default .nav .dropdown-menu ul.product-gallery {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+}
+
+.navbar-default .nav > li > a,
+.navbar-default .nav > li > a i,
+.navbar-default .nav > li .form-group.search i,
+.navbar-default .nav > li .form-group.lang .bfh-languages .bfh-selectbox-toggle .selectbox-caret {
+    color: #333 !important;
+}
+
+.navbar-default .nav > li > a i:hover,
+.navbar-default .nav > li > a i:focus,
+.navbar-default .nav > li.active > a i {
+    color: #555 !important;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+hr {
+    border-color: #333 !important;
+}
+
+table thead {
+    background-color: #ddd !important;
+}
+
+/* Custom */
+.categories h3 a {
+    font-size: 18px !important;
+}
+
+.categories p {
+    font-size: 14px !important;
+}
+
+#logo {
+    height: 55px;
+    margin: 6px 0;
+}
+
+.help a {
+    text-decoration: underline;
+}
+
+.help .btn {
+    text-decoration: none;
+}
+
+.carouselicon {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+
+.view {
+    min-height: auto;
+}
+
+.item-box.product {
+    cursor: auto;
+}
+
+.holder p a {
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+    color: #333;
+    text-decoration: underline;
+}
+
+.holder p a:hover {
+    text-decoration: none;
+    color: #4DAA50;
+}
+
+.delivery {
+    font-size: 10px !important;
+    /*color: #F44336;*/
+    font-style: italic;
+}
+
+.buttonsContainer {
+    text-align: right;
+}
+
+.divRecipients, .tdUnits div {
+    display: none;
+}
+
+#CultureSelector {
+    border: 1px solid #333;
+}
+
+#CultureSelector:hover, 
+#CultureSelector:active, 
+#CultureSelector:focus {
+    background-color: #e6e6e6 !important;
+}
+
+.dropdown-menu >li > span:hover {
+    background-color: #e6e6e6;
+}
+
+.RadGrid .rgHeader,
+.RadGrid th.rgResizeCol,
+.RadGrid .rgRow,
+.RadGrid .rgAltRow,
+.RadGrid .rgHeader,
+.RadGrid .rgResizeCol,
+.RadGrid .rgPager,
+.RadGrid .rgGroupPanel,
+.RadGrid .rgGroupHeader,
+.RadGrid .rgFilterBox {
+    font-family: Roboto, Arial, sans-serif !important;
+}
+
+.CheckOutPage.panel-default .top,
+.OrderPriceContainer.panel-default .top {
+    background-color: #ddd;
+    color: #333;
+}
+
+.CheckOutPage.panel-default {
+    width: 50%;
+    min-width: 400px;
+    border: none;
+}
+
+.CheckOutPage.panel {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background-color: transparent;
+}
+
+.CheckOutPage.panel-default .bottom {
+    padding: 12px 0;
+}
+
+.rgMasterTable {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.RadGrid_Default .rgHeader {
+    color: #333 !important;
+}
+
+.rgMasterTable tbody tr {
+    background-color: #f5f5f5;
+}
+
+.rgMasterTable tbody tr:nth-child(odd) {
+    background-color: #e8e8e8;
+}
+
+.CheckOutPage.panel-default .bottom .buttonContainer .btn {
+    background-color: #4DAA50 !important;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.CheckOutPage.panel-default .bottom .buttonContainer .btn:hover {
+    background-color: #485956 !important;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+    width: 80px;
+}
+
+.group-description {
+    left: 15px;
+}
+
+.collage {
+    background-color: #dddddd;
+}
+
+.collage3x h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.navbar-default .navbar-toggle {
+    background: #333;
+    border-color: #333;
+}
+
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+    background: #555;
+    border-color: #555;
+    color: #fff !important;
+}
+
+.navbar-default .navbar-toggle:hover > span {
+    background-color: #fff;
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)); /* Standard syntax */
+}
+
+.carousel-caption .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6) !important;
+    position: absolute;
+    bottom: 65px;
+    left: 0px;
+}
+
+.carousel-caption .container p {
+    width: 70%;
+    max-width: 1170px;
+    margin: 0 auto 10px auto;
+}
+
+.carousel-caption .btn {
+    border-color: #4DAA50;
+    background-color: #4DAA50 !important;
+    color: #fff;
+    width: auto;
+    padding: 12px 25px;
+    position: static;
+    margin: 0;
+}
+
+.carousel-caption .btn:hover {
+    border-color: #4DAA50;
+    background-color: transparent !important;
+}
+
+.carousel-indicators li {
+    box-shadow: 0 1px 2px rgba(0,0,0,.3) !important;
+}
+
+.carousel-indicators li.active,
+.carousel-indicators li:hover {
+    border-color: #fff;
+    background: #fff;
+}
+
+.copyright {
+    padding-bottom: 1%;
+}
+
+.categories .viewall {
+    text-align: right;
+}
+
+@media (max-width: 1200px) {
+.categories .viewall {
+    text-align: left;
+}
+}
+
+@media (max-width: 991px) {
+    .carousel-caption .btn {
+        padding: 7px 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-default .nav > li:nth-child(3),
+    .navbar-default .nav > li:nth-child(4),
+    .navbar-default .nav > li:nth-child(5),
+    .navbar-default .nav > li:nth-child(6) {
+        border-right: none;
+        padding-top: 50px;
+    }
+    .navbar-default .nav .dropdown-menu ul.product-gallery {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+    .carousel-caption .btn {
+        padding: 6px 12px;
+    }
+    .carousel-caption .container {
+        bottom: 35px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container > .navbar-collapse {
+        margin-right: -15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-default .nav .dropdown-menu ul.product-gallery {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+#CultureSelector {
+    color: #333 !important;
+    text-transform: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    height: 34px;
+}
+
+.navbar-default .form-control {
+    border-color: #333;
+}
+
+.cart-count-badge {
+    color: #fff;
+    font-size: 8px;
+    text-align: center;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    background-color: #F44336;
+    border-radius: 50%;
+    z-index: 1000;
+    position: absolute;
+    top: 14px;
+    right: 8px;
+}
+
+.ShoppingCartControl span,
+.ShoppingCartControl th {
+    font-family: 'Roboto', Arial, sans-serif !important;
+}

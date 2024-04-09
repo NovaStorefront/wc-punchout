@@ -1,0 +1,4 @@
+﻿<%@ ServiceHost Language="C#" 
+    Debug="true" 
+    Service="uStorePunchOut2Go.Service.Service" 
+    CodeBehind="Service.svc.cs" %>

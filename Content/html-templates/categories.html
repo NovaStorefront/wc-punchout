@@ -1,0 +1,23 @@
+﻿<!--English123-->
+<div class="container">
+  <!-- <div class="categories">
+    <a class="category-item" href="/PunchOut3/index.html#/products/1603">
+      <div class="image-wrapper">
+        <img class="" style="background-color: white;"
+          ng-src="/PunchOut3/content/images/groups/1603.jpg" />
+      </div>
+      <div class="category-name">
+        <div class="">
+          <div>Promo Merchandise</div>
+        </div>
+      </div>
+    </a>
+  </div> -->
+  test123
+ <ul class="header-product-gallery">
+                        <li ng-repeat="groupInfo in productGroups" ng-click="$location.path('/products/' + groupInfo.id)">
+                             <a ng-bind-html="groupInfo.name"></a>
+                        </li>
+              </ul>
+
+</div>

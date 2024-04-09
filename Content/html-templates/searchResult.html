@@ -1,0 +1,110 @@
+﻿<section class="catalog-items">
+    <div class="container">
+        <div ng-if="products.length > 0">
+            <span class="search-result-text">{{session.settings.localization.searchResult}}</span>
+            <div class="row" ng-repeat="products in composedProducts">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item-box product" ng-style="{ 'cursor': product.allowQuickAddToCart ? 'unset' : 'pointer'}" ng-repeat="product in products">
+                    <div class="container prod-container" ng-if="!product.allowQuickAddToCart">
+                        <div class="thumb">
+                            <a ng-click="goToUStore(product.id)">
+                                <div class="image-wrapper"><img ng-src="Handlers/ImageHandler.ashx?pid={{product.id}}" class="img-responsive" alt="{{product.name}}">
+                            </div></a>
+                        </div>
+                        <div class="holder" ng-click="goToUStore(product.id)">
+                            <h3><a ng-bind-html="product.name"></a></h3>
+                            <p ng-bind-html="product.description"></p>
+                        </div>
+                        <div class="anchor-flex-end"></div>
+                        <div class="button-view">
+                            <div ng-if="product.price" class="col-lg-6 col-md-6">from<span>{{product.price}}</span></div>
+                            <div style="height: 18px"><span ng-class="{'stock-status': product.productInventory.allowContinue, 'stock-status-warning': !(product.productInventory.allowContinue) }">{{product.productInventory.message}}</span></div>
+
+                            <div ng-if="product.productInventory.allowContinue" class="" ng-click="goToUStore(product.id)">
+                                <a class="btn btn-primary product-btn" role="button">
+                                    {{session.settings.localization.more}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container prod-container" ng-if="product.allowQuickAddToCart">
+                        <div class="thumb">
+                            <a ng-click="goToUStore(product.id)">
+                                <div class="image-wrapper"><img ng-src="Handlers/ImageHandler.ashx?pid={{product.id}}" class="img-responsive" alt="{{product.name}}"></div>
+                            </a>
+                        </div>
+                        <div class="holder" ng-click="goToUStore(product.id)">
+                            <h3><a ng-bind-html="product.name"></a></h3>
+                            <p ng-bind-html="product.description"></p>
+                            <div style="height: 18px"><span ng-class="{'stock-status': product.productInventory.allowContinue, 'stock-status-warning': !(product.productInventory.allowContinue) }">{{product.productInventory.message}}</span></div>
+                           
+                        </div>
+                        <div class="button-view text-align-center">
+                            <div ng-if="product.price" class="col-lg-6 col-md-6">from<span>{{product.price}}</span></div>
+                            <div ng-if="product.productInventory.allowContinue">
+                                <div ng-if="product.Changeable && product.Options === null" class="indicator-wrap col-lg-12 col-md-12 add-to-card-wrap add_to_card_controll_{{product.id}}">
+                                    <div class="indicator minus cursor-pointer" ng-click="minusQuantity(product)">-</div>
+                                    <input ng-input="checkQuantityValid(product)" ng-keydown="checkQuantityValid(product)" onkeydown="changeQuantity($(this))" onchange="changeQuantity($(this))" class="quantity-input" id="quantity_{{product.id}}" productid="{{product.id}}" type="number" name="test_name" min="0" oninput="validity.valid||(value='');" value="{{product.MinUnitsPerOrder}}" />
+                                    <div class="indicator plus cursor-pointer" ng-click="plusQuantity(product)">+</div>
+                                </div>
+                                <div ng-if="!product.Changeable" id="quantity_{{product.id}}" class="col-lg-12 col-md-12 add-to-card-wrap add_to_card_controll_{{product.id}}">
+                                    Quantity: {{product.MinUnitsPerOrder}}
+                                </div>
+                                <div ng-if="product.Changeable && product.Options != null && product.Options.length" class="col-lg-12 col-md-12 add-to-card-wrap add_to_card_controll_{{product.id}}">
+                                    <select id="quantity_{{product.id}}" onchange="changeQuantity($(this))">
+                                        <option ng-click="changeQuantityFromSelect(product.id)" ng-repeat="option in product.Options" ng-value="option.Value">
+                                            {{option.Name}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="anchor-flex-end"></div>
+                                <div class="col-lg-12 col-md-12 add_to_card_controll_{{product.id}}" ng-click="addToCard(product.id, product)">
+                                    <div class="btn btn-primary float-none">
+                                        Add to cart
+                                    </div>
+                                </div>
+                                <div style="display: none" class="col-lg-12 col-md-12" id="add_to_card_success_{{product.id}}">
+                                    <div class="add-to-cart-success">
+                                        <div>
+                                            Added Successfully
+                                            <div class="success-checkmark-icon-wrapper">
+                                                <i style="font-size: 22px" class="fa fa-cart-plus"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: none" class="col-lg-12 col-md-12 alert validation_alert_controll_{{product.id}}" id="validation_alert_{{product.id}}">
+                                    Order quantity is limited to {{product.storeInventoryQuantity}}.
+                                </div>
+
+                                <div style="display: none" class="col-lg-12 col-md-12 alert validation_custom_alert_controll_{{product.id}}">
+                                    Minimum quantity is {{product.MinUnitsPerOrder}}.
+                                </div>
+
+                                <div style="display: none" class="col-lg-12 col-md-12 alert min_validation_custom_alert_controll_{{product.id}}">
+                                    Minimum quantity is {{product.MinUnitsPerOrder}}.
+                                </div>
+
+                                <div style="display: none" class="col-lg-12 col-md-12 alert max_validation_custom_alert_controll_{{product.id}}">
+                                    Maximum quantity is {{product.MaxUnitsPerOrder}}.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-products" ng-if="products.length == 0">
+            <div class="no-products-inner">
+            <span class="no-products-text">{{session.settings.localization.noProducts}}</span>
+            <div class="search-divider"></div>
+            <div class="shop-by-category">Shop by category</div>
+            </div>
+            <ul class="categories-wrapper-ul">
+                <li ng-repeat="groupInfo in productGroups" ng-click="$location.path('/products/' + groupInfo.id)">
+                    <div class="group-img-wrapper"><img src="Content/images/default.png" alt=''/></div>
+                    <span class="group-name" ng-bind-html="groupInfo.name"></span>
+                </li>
+        </ul>
+        </div>
+    </div>
+</section>
