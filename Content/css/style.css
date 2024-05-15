@@ -1,5 +1,5 @@
 ﻿/* 
-PMS 361 - #4DAA50
+PMS 361 - #fecd32
 PMS 5535 - #485956 
 red - #F44336
 black - #333
@@ -15,7 +15,7 @@ a:focus,
 .help a:hover,
 .help a:focus,
 .breadcrumb li > a {
-    color: #4DAA50;
+    color: #fecd32;
 }
 
 .breadcrumb li > a:hover {
@@ -25,7 +25,7 @@ a:focus,
 input[type=submit],
 input[type="button"],
 .btn-default {
-    background-color: #4DAA50;
+    background-color: #fecd32;
     border: none;
 }
 
@@ -46,8 +46,8 @@ input[type="button"],
 
 .btn-primary {
     color: white;
-    background-color: #4DAA50 !important;
-    border-color: #4DAA50 !important;
+    background-color: #fecd32 !important;
+    border-color: #fecd32 !important;
 }
 
 .btn-primary.disabled,
@@ -86,7 +86,7 @@ fieldset[disabled] .btn-primary.active {
 .navbar-default .nav > li > a i,
 .navbar-default .nav > li .form-group.search i,
 .navbar-default .nav > li .form-group.lang .bfh-languages .bfh-selectbox-toggle .selectbox-caret {
-    color: #333 !important;
+    color: #fff !important;
 }
 
 .navbar-default .nav > li > a i:hover,
@@ -153,7 +153,7 @@ table thead {
 
 .holder p a:hover {
     text-decoration: none;
-    color: #4DAA50;
+    color: #fecd32;
 }
 
 .delivery {
@@ -238,7 +238,7 @@ table thead {
 }
 
 .CheckOutPage.panel-default .bottom .buttonContainer .btn {
-    background-color: #4DAA50 !important;
+    background-color: #fecd32 !important;
     padding: 6px 12px;
     font-size: 14px;
     font-weight: bold;
@@ -267,8 +267,8 @@ table thead {
 }
 
 .navbar-default .navbar-toggle {
-    background: #333;
-    border-color: #333;
+    background: #fff;
+    border-color: #fff;
 }
 
 .navbar-default .navbar-toggle:hover, 
@@ -313,8 +313,8 @@ table thead {
 }
 
 .carousel-caption .btn {
-    border-color: #4DAA50;
-    background-color: #4DAA50 !important;
+    border-color: #fecd32;
+    background-color: #fecd32 !important;
     color: #fff;
     width: auto;
     padding: 12px 25px;
@@ -323,7 +323,7 @@ table thead {
 }
 
 .carousel-caption .btn:hover {
-    border-color: #4DAA50;
+    border-color: #fecd32;
     background-color: transparent !important;
 }
 
@@ -401,7 +401,7 @@ table thead {
 }
 
 .navbar-default .form-control {
-    border-color: #333;
+    border-color: #fff;
 }
 
 .cart-count-badge {
