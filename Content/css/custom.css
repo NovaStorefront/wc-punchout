@@ -1,5 +1,5 @@
 ﻿/* 
-PMS 361 - #4DAA50
+PMS 361 - #fecd32
 PMS 5535 - #485956 
 red - #F44336
 black - #333
@@ -16,7 +16,7 @@ a:focus,
 .help a:hover,
 .help a:focus,
 .breadcrumb li > a {
-    color: #4DAA50;
+    color: #fecd32;
 }
 
 .breadcrumb li > a:hover {
@@ -26,7 +26,7 @@ a:focus,
 input[type=submit],
 input[type="button"],
 .btn-default {
-    background-color: #4DAA50;
+    background-color: #fecd32;
     border: none;
 }
 
@@ -47,8 +47,8 @@ input[type="button"],
 
 .btn-primary {
     color: white;
-    background-color: #4DAA50 !important;
-    border-color: #4DAA50 !important;
+    background-color: #fecd32 !important;
+    border-color: #fecd32 !important;
 }
 
 .btn-primary.disabled,
@@ -154,7 +154,7 @@ table thead {
 
 .holder p a:hover {
     text-decoration: none;
-    color: #4DAA50;
+    color: #fecd32;
 }
 
 .delivery {
@@ -239,7 +239,7 @@ table thead {
 }
 
 .CheckOutPage.panel-default .bottom .buttonContainer .btn {
-    background-color: #4DAA50 !important;
+    background-color: #fecd32 !important;
     padding: 6px 12px;
     font-size: 14px;
     font-weight: bold;
@@ -314,8 +314,8 @@ table thead {
 }
 
 .carousel-caption .btn {
-    border-color: #4DAA50;
-    background-color: #4DAA50 !important;
+    border-color: #fecd32;
+    background-color: #fecd32 !important;
     color: #fff;
     width: auto;
     padding: 12px 25px;
@@ -324,7 +324,7 @@ table thead {
 }
 
 .carousel-caption .btn:hover {
-    border-color: #4DAA50;
+    border-color: #fecd32;
     background-color: transparent !important;
 }
 
