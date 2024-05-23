@@ -27,7 +27,7 @@
 
    
     if (hasGroupSubcategories) {
-      $('.product-gallery-link').first().css('color', '#20a8ce')
+      $('.product-gallery-link').first().css('color', '#000000')
       $scope.showExpandedMenu = true
       $('.tooltip-wrapper').css('box-shadow', 'unset')
       $('.tooltip-wrapper').css('height', 'auto')
